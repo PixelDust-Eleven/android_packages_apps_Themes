@@ -237,7 +237,14 @@ public class ThemesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         mThemeNightColor = Color.parseColor(themes.getThemeNightColor());
         mThemeFont = Integer.parseInt(themes.getThemeFont());
         mThemeWpBackup = themes.getThemeWp();
-        int bgQsAccent = Color.parseColor(themes.getThemeAccent());
+        int bgQsAccent = 0;
+        String accentColor = themes.getAccentPicker();
+        final String prefix = "hex";
+        if (accentColor.startsWith(prefix)) {
+            bgQsAccent = Color.parseColor("#" + accentColor.substring(prefix.length()));
+        } else {
+            bgQsAccent = Color.parseColor(themes.getThemeAccent());
+        }
         int qsTileBgInactive, qsTileIconInactive, qsTileIconActive;
         String pathShape = themes.getThemeIconShape();
         String themeName = themes.getThemeName();

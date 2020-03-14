@@ -29,6 +29,8 @@
     <string name="accent_picker_stock_colors">Stock</string>
     <string name="accent_picker_custom_colors">Benutzerdefiniert</string>
     <string name="accent_picker_brand_colors">Marken</string>
+    <string name="rgb_accent_picker_title">RGB Akzentauswahl</string>
+    <string name="rgb_accent_picker_summary">Wähle deine eigene Akzentfarbe</string>
 
     <!-- Navbar Picker -->
     <string name="theme_navbar_picker_title">Navbar-Stil</string>
