@@ -76,9 +76,11 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
     private static final String PREF_WP_PREVIEW = "wp_preview";
     private static final String PREF_THEME_SCHEDULE = "theme_schedule";
     private static final String PREF_THEME_ACCENT_PICKER = "theme_accent_picker";
+    public static final String PREF_THEME_ACCENT_COLOR = "theme_accent_color";
     private static final String PREF_THEME_NAVBAR_PICKER = "theme_navbar_picker";
     public static final String PREF_THEME_NAVBAR_STYLE = "theme_navbar_style";
-    public static final String PREF_THEME_ACCENT_COLOR = "theme_accent_color";
+    private static final String PREF_THEME_QSSTYLE_PICKER = "theme_qsstyle_picker";
+    public static final String PREF_THEME_QSTILE_STYLE = "theme_qstile_style";
     public static final String PREF_ADAPTIVE_ICON_SHAPE = "adapative_icon_shape";
     public static final String PREF_FONT_PICKER = "font_picker";
     public static final String PREF_STATUSBAR_ICONS = "statusbar_icons";
@@ -91,6 +93,7 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
     private static boolean mUseSharedPrefListener;
     private String[] mAccentName;
     private String[] mNavbarName;
+    private String[] mQSStyleName;
 
     private Context mContext;
     private IOverlayManager mOverlayManager;
@@ -105,6 +108,7 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
     private Preference mAccentPicker;
     private Preference mBackupThemes;
     private Preference mNavbarPicker;
+    private Preference mQSStylePicker;
     private Preference mRestoreThemes;
     private Preference mThemeSchedule;
     private Preference mWpPreview;
@@ -143,6 +147,9 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
 
         // Navbar summary
         mNavbarName = getResources().getStringArray(R.array.navbar_name);
+
+        // QSStyle summary
+        mQSStyleName = getResources().getStringArray(R.array.qsstyle_name);
 
         // Wallpaper preview
         mWpPreview = (Preference) findPreference(PREF_WP_PREVIEW);
@@ -196,6 +203,23 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
         } else {
             prefSet.removePreference(mNavbarPicker);
         }
+
+        // QSStyle picker
+        mQSStylePicker = (Preference) findPreference(PREF_THEME_QSSTYLE_PICKER);
+        assert mQSStylePicker != null;
+        mQSStylePicker.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                FragmentManager manager = getFragmentManager();
+                Fragment frag = manager.findFragmentByTag(QSStylePicker.TAG_QSSTYLE_PICKER);
+                if (frag != null) {
+                    manager.beginTransaction().remove(frag).commit();
+                }
+                QSStylePicker qsStylePickerFragment = new QSStylePicker();
+                qsStylePickerFragment.show(manager, QSStylePicker.TAG_QSSTYLE_PICKER);
+                return true;
+            }
+        });
 
         // Themes backup
         mBackupThemes = (Preference) findPreference(PREF_BACKUP_THEMES);
@@ -269,6 +293,12 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
             mSharedPreferences.edit().putString("theme_navbar_style", navbarName).apply();
         }
 
+        // QSStyles
+        String qsStyleName = getOverlayName(ThemesUtils.QS_TILE_THEMES);
+        if (qsStyleName != null) {
+            mSharedPreferences.edit().putString("theme_qstile_style", qsStyleName).apply();
+        }
+
         // Themes
         mThemeSwitch = (ListPreference) findPreference(PREF_THEME_SWITCH);
         // First of all we have to evaluate whether the light or dark mode is active
@@ -320,6 +350,7 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
         setWallpaperPreview();
         updateAccentSummary();
         updateNavbarSummary();
+        updateQSStyleSummary();
         updateThemeScheduleSummary();
         updateBackupPref();
         updateRestorePref();
@@ -479,6 +510,18 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
                     handleOverlays(navbarStyle, true, mOverlayManager);
                 }
                 updateNavbarSummary();
+            }
+
+            if (key.equals(PREF_THEME_QSTILE_STYLE)) {
+                String qsStyle = sharedPreferences.getString(PREF_THEME_QSTILE_STYLE, "com.android.systemui.qstile.default");
+                String overlayName = getOverlayName(ThemesUtils.QS_TILE_THEMES);
+                if (overlayName != null) {
+                    handleOverlays(overlayName, false, mOverlayManager);
+                }
+                if (qsStyle != "default") {
+                    handleOverlays(qsStyle, true, mOverlayManager);
+                }
+                updateQSStyleSummary();
             }
 
             if (key.equals(PREF_FONT_PICKER)) {
@@ -664,6 +707,17 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
         }
     }
 
+    private void updateQSStyleSummary() {
+        if (mQSStylePicker != null) {
+            int value = getOverlayPosition(ThemesUtils.QS_TILE_THEMES);
+            if (value != -1) {
+                mQSStylePicker.setSummary(mQSStyleName[value]);
+            } else {
+                mQSStylePicker.setSummary(R.string.theme_accent_picker_default);
+            }
+        }
+    }
+
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.themes_main, menu);
@@ -713,6 +767,8 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
             .remove(PREF_THEME_ACCENT_COLOR)
             // NavBar
             .remove(PREF_THEME_NAVBAR_STYLE)
+            // QSStyle
+            .remove(PREF_THEME_QSTILE_STYLE)
             // Fonts
             .remove(PREF_FONT_PICKER)
             // Adapative icons

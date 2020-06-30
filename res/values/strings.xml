@@ -204,5 +204,12 @@
     <string name="clock_style_title">Clock style</string>
     <string name="clock_style_summary">Customize lockscreen clock</string>
 
+    <!-- QS tile styles -->
+    <string name="theme_qsstyle_picker_title">QS tile style</string>
+    <string name="theme_qsstyle_picker_summary">Select QS tile style</string>
+    <string name="qstile_default">Default</string>
+    <string name="qstile_circle_trim">Circle with trim</string>
+    <string name="qstile_dual_tone_circle">Dual-toned circle</string>
+    <string name="qstile_squircle_trim">Squircle with trim</string>
 </resources>
 

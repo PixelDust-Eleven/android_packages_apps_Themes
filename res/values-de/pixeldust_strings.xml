@@ -173,5 +173,12 @@
     <string name="clock_style_title">Sperrbildschirmuhr</string>
     <string name="clock_style_summary">Stil für Sperrbildschirmuhr wählen</string>
 
+    <!-- QS tile styles -->
+    <string name="theme_qsstyle_picker_title">Aussehen der QS-Kacheln</string>
+    <string name="theme_qsstyle_picker_summary">Wähle den Stil für die QS-Kacheln</string>
+    <string name="qstile_default">Standard</string>
+    <string name="qstile_circle_trim">Einfach umrandeter Kreis</string>
+    <string name="qstile_dual_tone_circle">Zweifarbiger umrandeter Kreis</string>
+    <string name="qstile_squircle_trim">Abgerundetes Quadrat</string>
 </resources>
 

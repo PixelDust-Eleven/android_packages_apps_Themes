@@ -58,14 +58,9 @@
         android:entryValues="@array/statusbar_icons_values" />
 
     <Preference
-        android:key="clock_style"
-        android:title="@string/clock_style_title"
-        android:summary="@string/clock_style_summary">
-        <intent
-            android:action="android.intent.action.VIEW"
-            android:targetPackage="com.android.wallpaper"
-            android:targetClass="com.android.customization.picker.LockClockPickerActivity" />
-    </Preference>
+        android:key="theme_qsstyle_picker"
+        android:title="@string/theme_qsstyle_picker_title"
+        android:summary="@string/theme_qsstyle_picker_summary" />
 
     <PreferenceCategory
         android:title="System theme" >
@@ -87,6 +82,16 @@
     <PreferenceCategory
         android:key="theme_other_category"
         android:title="@string/theme_other_category_title">
+
+        <Preference
+            android:key="clock_style"
+            android:title="@string/clock_style_title"
+            android:summary="@string/clock_style_summary">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:targetPackage="com.android.wallpaper"
+                android:targetClass="com.android.customization.picker.LockClockPickerActivity" />
+        </Preference>
 
         <Preference
             android:key="backup_themes"

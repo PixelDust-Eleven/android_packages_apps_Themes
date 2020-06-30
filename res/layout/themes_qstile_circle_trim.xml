@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2020 The PixelDust Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:paddingBottom="10dp">
+
+    <TextView
+        android:id="@+id/qstile_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#04000000"
+        android:layout_centerHorizontal="true"
+        android:textSize="16sp"
+        android:textAppearance="?android:attr/textAppearanceListItem"
+        android:text="@string/qstile_circle_trim" />
+
+    <ImageView
+        android:id="@+id/tile_1"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/qstile_circle_trim"
+        android:tint="@color/qs_tile_background_active"
+        android:layout_below="@+id/qstile_title" />
+
+    <ImageView
+        android:id="@+id/icon_1"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
+        android:src="@drawable/ic_themes_wifi"
+        android:tint="@color/qs_tile_icon_active"
+        android:layout_below="@+id/qstile_title" />
+
+    <ImageView
+        android:id="@+id/tile_2"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/qstile_circle_trim"
+        android:tint="@*android:color/du_themes_qs_inactive_color"
+        android:layout_below="@+id/qstile_title"
+        android:layout_toEndOf="@+id/tile_1" />
+
+    <ImageView
+        android:id="@+id/icon_2"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
+        android:src="@drawable/ic_themes_bluetooth"
+        android:tint="@color/qs_tile_icon_inactive"
+        android:layout_below="@+id/qstile_title"
+        android:layout_toEndOf="@+id/tile_1" />
+
+    <ImageView
+        android:id="@+id/tile_3"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/qstile_circle_trim"
+        android:tint="@*android:color/du_themes_qs_inactive_color"
+        android:layout_below="@+id/qstile_title"
+        android:layout_toEndOf="@+id/tile_2" />
+
+    <ImageView
+        android:id="@+id/icon_3"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
+        android:src="@drawable/ic_themes_dnd"
+        android:tint="@color/qs_tile_icon_inactive"
+        android:layout_below="@+id/qstile_title"
+        android:layout_toEndOf="@+id/tile_2" />
+
+    <ImageView
+        android:id="@+id/tile_4"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/qstile_circle_trim"
+        android:tint="@*android:color/du_themes_qs_inactive_color"
+        android:layout_below="@+id/qstile_title"
+        android:layout_toEndOf="@+id/tile_3" />
+
+    <ImageView
+        android:id="@+id/icon_4"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
+        android:src="@drawable/ic_themes_flashlight"
+        android:tint="@color/qs_tile_icon_inactive"
+        android:layout_below="@+id/qstile_title"
+        android:layout_toEndOf="@+id/tile_3" />
+
+    <ImageView
+        android:id="@+id/tile_5"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/qstile_circle_trim"
+        android:tint="@*android:color/du_themes_qs_inactive_color"
+        android:layout_below="@+id/qstile_title"
+        android:layout_toEndOf="@+id/tile_4" />
+
+    <ImageView
+        android:id="@+id/icon_5"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginEnd="22dp"
+        android:src="@drawable/ic_themes_autorotate"
+        android:tint="@color/qs_tile_icon_inactive"
+        android:layout_below="@+id/qstile_title"
+        android:layout_toEndOf="@+id/tile_4" />
+
+</RelativeLayout>
