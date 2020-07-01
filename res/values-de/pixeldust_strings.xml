@@ -180,5 +180,11 @@
     <string name="qstile_circle_trim">Einfach umrandeter Kreis</string>
     <string name="qstile_dual_tone_circle">Zweifarbiger umrandeter Kreis</string>
     <string name="qstile_squircle_trim">Abgerundetes Quadrat</string>
+    <string name="qstile_attempt_mountain">Gebirgsmotiv</string>
+    <string name="qstile_cosmos">Kosmos</string>
+    <string name="qstile_dotted_circle">Gepunkter Kreis</string>
+    <string name="qstile_ninja">Ninjastern</string>
+    <string name="qstile_poke_sign">Poke-Zeichen</string>
+    <string name="qstile_wavey">Wellenförmiger Farbverlauf</string>
 </resources>
 

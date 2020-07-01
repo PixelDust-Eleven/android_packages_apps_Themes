@@ -300,6 +300,12 @@
         <item>@string/qstile_circle_trim</item>
         <item>@string/qstile_dual_tone_circle</item>
         <item>@string/qstile_squircle_trim</item>
+        <item>@string/qstile_attempt_mountain</item>
+        <item>@string/qstile_cosmos</item>
+        <item>@string/qstile_dotted_circle</item>
+        <item>@string/qstile_ninja</item>
+        <item>@string/qstile_poke_sign</item>
+        <item>@string/qstile_wavey</item>
     </string-array>
 
     <string-array name="qsstyle_picker_layouts" translatable="false">
@@ -307,6 +313,12 @@
         <item>qstile_circle_trim</item>
         <item>qstile_dual_tone_circle</item>
         <item>qstile_squircle_trim</item>
+        <item>qstile_attempt_mountain</item>
+        <item>qstile_cosmos</item>
+        <item>qstile_dotted_circle</item>
+        <item>qstile_ninja</item>
+        <item>qstile_poke_sign</item>
+        <item>qstile_wavey</item>
     </string-array>
 
 </resources>

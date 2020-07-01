@@ -211,5 +211,11 @@
     <string name="qstile_circle_trim">Circle with trim</string>
     <string name="qstile_dual_tone_circle">Dual-toned circle</string>
     <string name="qstile_squircle_trim">Squircle with trim</string>
+    <string name="qstile_attempt_mountain">Attempt Mountain</string>
+    <string name="qstile_cosmos">Cosmos</string>
+    <string name="qstile_dotted_circle">Dotted Circle</string>
+    <string name="qstile_ninja">Ninja</string>
+    <string name="qstile_poke_sign">Poke Sign</string>
+    <string name="qstile_wavey">Wavey</string>
 </resources>
 

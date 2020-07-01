@@ -72,6 +72,54 @@
                 android:layout_width="wrap_content"
                 android:layout_marginBottom="15dp"/>
 
+            <include layout="@layout/themes_qstile_attempt_mountain"
+                android:id="@+id/qstile_attempt_mountain"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/qstile_squircle_trim"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginBottom="15dp"/>
+
+            <include layout="@layout/themes_qstile_cosmos"
+                android:id="@+id/qstile_cosmos"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/qstile_attempt_mountain"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginBottom="15dp"/>
+
+            <include layout="@layout/themes_qstile_dotted_circle"
+                android:id="@+id/qstile_dotted_circle"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/qstile_cosmos"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginBottom="15dp"/>
+
+            <include layout="@layout/themes_qstile_ninja"
+                android:id="@+id/qstile_ninja"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/qstile_dotted_circle"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginBottom="15dp"/>
+
+            <include layout="@layout/themes_qstile_poke_sign"
+                android:id="@+id/qstile_poke_sign"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/qstile_ninja"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginBottom="15dp"/>
+
+            <include layout="@layout/themes_qstile_wavey"
+                android:id="@+id/qstile_wavey"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/qstile_poke_sign"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_marginBottom="15dp"/>
+
         </RelativeLayout>
 
     </LinearLayout>
