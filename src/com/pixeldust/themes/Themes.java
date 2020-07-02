@@ -111,7 +111,7 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
     private Preference mQSStylePicker;
     private Preference mRestoreThemes;
     private Preference mThemeSchedule;
-    private Preference mWpPreview;
+    private CustomPreference mWpPreview;
 
     private ColorPickerPreference rgbAccentPicker;
 
@@ -152,7 +152,7 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
         mQSStyleName = getResources().getStringArray(R.array.qsstyle_name);
 
         // Wallpaper preview
-        mWpPreview = (Preference) findPreference(PREF_WP_PREVIEW);
+        mWpPreview = (CustomPreference) findPreference(PREF_WP_PREVIEW);
 
         // Theme schedule
         mThemeSchedule = (Preference) findPreference(PREF_THEME_SCHEDULE);
@@ -715,6 +715,8 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
             } else {
                 mQSStylePicker.setSummary(R.string.theme_accent_picker_default);
             }
+            // Update preview
+            mWpPreview.setResources();
         }
     }
 

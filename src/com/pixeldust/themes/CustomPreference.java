@@ -45,13 +45,31 @@ public class CustomPreference extends Preference {
         setResources();
     }
 
-    private void setResources() {
+    public void setResources() {
         if (PixeldustUtils.isThemeEnabled("com.android.theme.icon_pack.filled.android")) {
             setLayoutResource(R.layout.themes_main_filled);
         } else if (PixeldustUtils.isThemeEnabled("com.android.theme.icon_pack.rounded.android")) {
             setLayoutResource(R.layout.themes_main_rounded);
         } else if (PixeldustUtils.isThemeEnabled("com.android.theme.icon_pack.circular.android")) {
             setLayoutResource(R.layout.themes_main_circular);
+        } else if (PixeldustUtils.isTileStyleEnabled("com.android.systemui.qstile.circletrim")) {
+            setLayoutResource(R.layout.themes_main_circletrim);
+        } else if (PixeldustUtils.isTileStyleEnabled("com.android.systemui.qstile.dualtonecircletrim")) {
+            setLayoutResource(R.layout.themes_main_dualtonecircletrim);
+        } else if (PixeldustUtils.isTileStyleEnabled("com.android.systemui.qstile.squircletrim")) {
+            setLayoutResource(R.layout.themes_main_squircletrim);
+        } else if (PixeldustUtils.isTileStyleEnabled("com.android.systemui.qstile.attemptmountain")) {
+            setLayoutResource(R.layout.themes_main_attemptmountain);
+        } else if (PixeldustUtils.isTileStyleEnabled("com.android.systemui.qstile.cosmos")) {
+            setLayoutResource(R.layout.themes_main_cosmos);
+        } else if (PixeldustUtils.isTileStyleEnabled("com.android.systemui.qstile.dottedcircle")) {
+            setLayoutResource(R.layout.themes_main_dottedcircle);
+        } else if (PixeldustUtils.isTileStyleEnabled("com.android.systemui.qstile.ninja")) {
+            setLayoutResource(R.layout.themes_main_ninja);
+        } else if (PixeldustUtils.isTileStyleEnabled("com.android.systemui.qstile.pokesign")) {
+            setLayoutResource(R.layout.themes_main_pokesign);
+        } else if (PixeldustUtils.isTileStyleEnabled("com.android.systemui.qstile.wavey")) {
+            setLayoutResource(R.layout.themes_main_wavey);
         } else {
             setLayoutResource(R.layout.themes_main);
         }
