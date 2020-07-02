@@ -532,14 +532,32 @@ public class ThemesAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
     private Drawable getNavbarStyle(String navStyle) {
         Drawable navbarStyle = null;
         switch (navStyle) {
+            case "com.android.theme.navbar.android":
+                navbarStyle = mResources.getDrawable(R.drawable.navbar_android_layer);
+                break;
             case "com.android.theme.navbar.asus":
                 navbarStyle = mResources.getDrawable(R.drawable.navbar_asus_layer);
+                break;
+            case "com.android.theme.navbar.moto":
+                navbarStyle = mResources.getDrawable(R.drawable.navbar_moto_layer);
+                break;
+            case "com.android.theme.navbar.nexus":
+                navbarStyle = mResources.getDrawable(R.drawable.navbar_nexus_layer);
+                break;
+            case "com.android.theme.navbar.old":
+                navbarStyle = mResources.getDrawable(R.drawable.navbar_old_layer);
                 break;
             case "com.android.theme.navbar.oneplus":
                 navbarStyle = mResources.getDrawable(R.drawable.navbar_oneplus_layer);
                 break;
             case "com.android.theme.navbar.oneui":
                 navbarStyle = mResources.getDrawable(R.drawable.navbar_oneui_layer);
+                break;
+            case "com.android.theme.navbar.pd":
+                navbarStyle = mResources.getDrawable(R.drawable.navbar_pd_layer);
+                break;
+            case "com.android.theme.navbar.sammy":
+                navbarStyle = mResources.getDrawable(R.drawable.navbar_sammy_layer);
                 break;
             case "com.android.theme.navbar.tecno":
                 navbarStyle = mResources.getDrawable(R.drawable.navbar_tecno_layer);

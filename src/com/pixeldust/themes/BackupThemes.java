@@ -228,14 +228,32 @@ public class BackupThemes extends DialogFragment {
     private Drawable getThemeBackupNavbar() {
         Drawable navbarBackup = null;
         switch (getNavbarStyle()) {
+            case "com.android.theme.navbar.android":
+                navbarBackup = mResources.getDrawable(R.drawable.navbar_android_layer);
+                break;
             case "com.android.theme.navbar.asus":
                 navbarBackup = mResources.getDrawable(R.drawable.navbar_asus_layer);
+                break;
+            case "com.android.theme.navbar.moto":
+                navbarBackup = mResources.getDrawable(R.drawable.navbar_moto_layer);
+                break;
+            case "com.android.theme.navbar.nexus":
+                navbarBackup = mResources.getDrawable(R.drawable.navbar_nexus_layer);
+                break;
+            case "com.android.theme.navbar.old":
+                navbarBackup = mResources.getDrawable(R.drawable.navbar_old_layer);
                 break;
             case "com.android.theme.navbar.oneplus":
                 navbarBackup = mResources.getDrawable(R.drawable.navbar_oneplus_layer);
                 break;
             case "com.android.theme.navbar.oneui":
                 navbarBackup = mResources.getDrawable(R.drawable.navbar_oneui_layer);
+                break;
+            case "com.android.theme.navbar.pd":
+                navbarBackup = mResources.getDrawable(R.drawable.navbar_pd_layer);
+                break;
+            case "com.android.theme.navbar.sammy":
+                navbarBackup = mResources.getDrawable(R.drawable.navbar_sammy_layer);
                 break;
             case "com.android.theme.navbar.tecno":
                 navbarBackup = mResources.getDrawable(R.drawable.navbar_tecno_layer);
