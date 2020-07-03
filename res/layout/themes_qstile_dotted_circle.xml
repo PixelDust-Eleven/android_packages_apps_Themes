@@ -51,7 +51,7 @@
         android:layout_marginStart="22dp"
         android:layout_marginEnd="22dp"
         android:src="@drawable/ic_themes_wifi"
-        android:tint="@color/qs_tile_icon_active"
+        android:tint="@color/qs_tile_icon_inactive"
         android:layout_below="@+id/qstile_title" />
 
     <ImageView
