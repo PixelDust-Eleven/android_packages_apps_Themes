@@ -31,6 +31,7 @@ public class ThemeDbUtils {
     private String mThemeSbIcons;
     private String mThemeWp;
     private String mThemeNavbarStyle;
+    private String mThemeQSTileStyle;
 
     public ThemeDbUtils() {
         //
@@ -38,7 +39,8 @@ public class ThemeDbUtils {
 
     public ThemeDbUtils(int id, String themeName, String themeDayOrNight, String themeAccent, String themeNightColor,
                 String accentPicker, String themeSwitch, String adaptativeIconShape, String themeFont,
-                String themeIconShape, String themeSbIcons, String themeWp, String themeNavbarStyle) {
+                String themeIconShape, String themeSbIcons, String themeWp, String themeNavbarStyle,
+                String themeQSTileStyle) {
         mId = id;
         mThemeName = themeName;
         mThemeDayOrNight = themeDayOrNight;
@@ -52,11 +54,13 @@ public class ThemeDbUtils {
         mThemeSbIcons = themeSbIcons;
         mThemeWp = themeWp;
         mThemeNavbarStyle = themeNavbarStyle;
+        mThemeQSTileStyle = themeQSTileStyle;
     }
 
     public ThemeDbUtils(String themeName, String themeDayOrNight, String themeAccent, String themeNightColor,
                 String accentPicker, String themeSwitch, String adaptativeIconShape, String themeFont,
-                String themeIconShape, String themeSbIcons, String themeWp, String themeNavbarStyle) {
+                String themeIconShape, String themeSbIcons, String themeWp, String themeNavbarStyle,
+                String themeQSTileStyle) {
         mThemeName = themeName;
         mThemeDayOrNight = themeDayOrNight;
         mThemeAccent = themeAccent;
@@ -69,6 +73,7 @@ public class ThemeDbUtils {
         mThemeSbIcons = themeSbIcons;
         mThemeWp = themeWp;
         mThemeNavbarStyle = themeNavbarStyle;
+        mThemeQSTileStyle = themeQSTileStyle;
     }
 
     public int getID() {
@@ -173,5 +178,13 @@ public class ThemeDbUtils {
 
     public void setThemeNavbarStyle(String themeNavbarStyle) {
         mThemeNavbarStyle = themeNavbarStyle;
+    }
+
+    public String getThemeQSTileStyle() {
+        return mThemeQSTileStyle;
+    }
+
+    public void setThemeQSTileStyle(String themeQSTileStyle) {
+        mThemeQSTileStyle = themeQSTileStyle;
     }
 }

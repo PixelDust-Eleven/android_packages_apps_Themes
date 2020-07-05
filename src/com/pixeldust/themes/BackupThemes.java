@@ -203,24 +203,57 @@ public class BackupThemes extends DialogFragment {
         mThemeDatabase.addThemeDbUtils(new ThemeDbUtils(mThemeName, isDarkMode(),
             getIconsAccentColor(), getThemeNightColor(), getAccentPicker(),
             getThemeSwitch(), getAdaptiveIconShape(), getFont(), getIconsShape(),
-            getSbIcons(), getThemeWp(), getNavbarStyle()));
+            getSbIcons(), getThemeWp(), getNavbarStyle(), getQSTileStyle()));
     }
 
     private int getThemeBackupPreview() {
         int value = Integer.parseInt(getSbIcons());
-        switch (value) {
-            case 1:
-                mRelativeLayout = R.layout.themes_main;
-                break;
-            case 2:
-                mRelativeLayout = R.layout.themes_main_filled;
-                break;
-            case 3:
-                mRelativeLayout = R.layout.themes_main_rounded;
-                break;
-            case 4:
-                mRelativeLayout = R.layout.themes_main_circular;
-                break;
+        String themeQSTileStyle = getQSTileStyle();
+        if (!themeQSTileStyle.equals("com.android.systemui.qstile.default")) {
+            switch (themeQSTileStyle) {
+                case "com.android.systemui.qstile.circletrim":
+                    mRelativeLayout = R.layout.themes_main_circletrim;
+                    break;
+                case "com.android.systemui.qstile.dualtonecircletrim":
+                    mRelativeLayout = R.layout.themes_main_dualtonecircletrim;
+                    break;
+                case "com.android.systemui.qstile.squircletrim":
+                    mRelativeLayout = R.layout.themes_main_squircletrim;
+                    break;
+                case "com.android.systemui.qstile.attemptmountain":
+                    mRelativeLayout = R.layout.themes_main_attemptmountain;
+                    break;
+                case "com.android.systemui.qstile.cosmos":
+                    mRelativeLayout = R.layout.themes_main_cosmos;
+                    break;
+                case "com.android.systemui.qstile.dottedcircle":
+                    mRelativeLayout = R.layout.themes_main_dottedcircle;
+                    break;
+                case "com.android.systemui.qstile.ninja":
+                    mRelativeLayout = R.layout.themes_main_ninja;
+                    break;
+                case "com.android.systemui.qstile.pokesign":
+                    mRelativeLayout = R.layout.themes_main_pokesign;
+                    break;
+                case "com.android.systemui.qstile.wavey":
+                    mRelativeLayout = R.layout.themes_main_wavey;
+                    break;
+            }
+        } else {
+            switch (value) {
+                case 1:
+                    mRelativeLayout = R.layout.themes_main;
+                    break;
+                case 2:
+                    mRelativeLayout = R.layout.themes_main_filled;
+                    break;
+                case 3:
+                    mRelativeLayout = R.layout.themes_main_rounded;
+                    break;
+                case 4:
+                    mRelativeLayout = R.layout.themes_main_circular;
+                    break;
+            }
         }
         return mRelativeLayout;
     }
@@ -317,6 +350,11 @@ public class BackupThemes extends DialogFragment {
     private String getNavbarStyle() {
         String navbarStyle = mSharedPreferences.getString("theme_navbar_style", "default");
         return navbarStyle;
+    }
+
+    private String getQSTileStyle() {
+        String qsTileStyle = mSharedPreferences.getString("theme_qstile_style", "com.android.systemui.qstile.default");
+        return qsTileStyle;
     }
 
     private File getWallpaperBitmap() throws IOException {

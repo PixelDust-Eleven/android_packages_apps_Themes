@@ -45,6 +45,7 @@ public class ThemeDatabase extends SQLiteOpenHelper {
     private static final String KEY_THEME_SB_ICONS = "themeSbIcons";
     private static final String KEY_THEME_WP = "themeWp";
     private static final String KEY_THEME_NAVBAR_STYLE = "themeNavbarStyle";
+    private static final String KEY_THEME_QSTILE_STYLE = "themeQSTileStyle";
 
     public ThemeDatabase(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -59,7 +60,8 @@ public class ThemeDatabase extends SQLiteOpenHelper {
                 + KEY_THEME_SWITCH + " TEXT," + KEY_ADAPTATIVE_ICON_SHAPE + " TEXT,"
                 + KEY_THEME_FONT + " TEXT," + KEY_THEME_ICON_SHAPE + " TEXT,"
                 + KEY_THEME_SB_ICONS + " TEXT," + KEY_THEME_WP + " TEXT,"
-                + KEY_THEME_NAVBAR_STYLE + " TEXT" + ")";
+                + KEY_THEME_NAVBAR_STYLE + " TEXT,"
+                + KEY_THEME_QSTILE_STYLE + " TEXT" + ")";
         db.execSQL(CREATE_THEME_TABLE);
     }
 
@@ -85,6 +87,7 @@ public class ThemeDatabase extends SQLiteOpenHelper {
         values.put(KEY_THEME_SB_ICONS, themeDbUtils.getThemeSbIcons());
         values.put(KEY_THEME_WP, themeDbUtils.getThemeWp());
         values.put(KEY_THEME_NAVBAR_STYLE, themeDbUtils.getThemeNavbarStyle());
+        values.put(KEY_THEME_QSTILE_STYLE, themeDbUtils.getThemeQSTileStyle());
 
         db.insert(THEME_TABLE, null, values);
         db.close();
@@ -97,7 +100,8 @@ public class ThemeDatabase extends SQLiteOpenHelper {
                         KEY_THEME_DAY_NIGHT, KEY_THEME_ACCENT, KEY_THEME_NIGHT_COLOR,
                         KEY_ACCENT_PICKER, KEY_THEME_SWITCH, KEY_ADAPTATIVE_ICON_SHAPE,
                         KEY_THEME_FONT, KEY_THEME_ICON_SHAPE, KEY_THEME_SB_ICONS,
-                        KEY_THEME_WP, KEY_THEME_NAVBAR_STYLE}, KEY_THEME_NAME + " = ?",
+                        KEY_THEME_WP, KEY_THEME_NAVBAR_STYLE, KEY_THEME_QSTILE_STYLE},
+                        KEY_THEME_NAME + " = ?",
                         new String[] {str}, null, null, null, null);
         if (cursor != null) {
             cursor.moveToFirst();
@@ -110,7 +114,8 @@ public class ThemeDatabase extends SQLiteOpenHelper {
                 cursor.getString(5), cursor.getString(6),
                 cursor.getString(7), cursor.getString(8),
                 cursor.getString(9), cursor.getString(10),
-                cursor.getString(11), cursor.getString(12));
+                cursor.getString(11), cursor.getString(12),
+                cursor.getString(13));
         cursor.close();
 
         return themeDbUtils;
@@ -139,6 +144,7 @@ public class ThemeDatabase extends SQLiteOpenHelper {
                 themeDbUtils.setThemeSbIcons(cursor.getString(10));
                 themeDbUtils.setThemeWp(cursor.getString(11));
                 themeDbUtils.setThemeNavbarStyle(cursor.getString(12));
+                themeDbUtils.setThemeQSTileStyle(cursor.getString(13));
                 themeDbUtilsList.add(themeDbUtils);
             } while (cursor.moveToNext());
         }
@@ -163,6 +169,7 @@ public class ThemeDatabase extends SQLiteOpenHelper {
         values.put(KEY_THEME_SB_ICONS, themeDbUtils.getThemeSbIcons());
         values.put(KEY_THEME_WP, themeDbUtils.getThemeWp());
         values.put(KEY_THEME_NAVBAR_STYLE, themeDbUtils.getThemeNavbarStyle());
+        values.put(KEY_THEME_QSTILE_STYLE, themeDbUtils.getThemeQSTileStyle());
 
         db.update(THEME_TABLE, values, KEY_THEME_NAME + " = ?",
                 new String[] {str});
