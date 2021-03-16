@@ -218,5 +218,20 @@
     <string name="qstile_ninja">Ninja</string>
     <string name="qstile_poke_sign">Poke Sign</string>
     <string name="qstile_wavey">Wavey</string>
+
+    <!-- gvisual mod -->
+    <string name="shape_ui_title">Shapes and UI customizations</string>
+    <string name="ui_radius_title">UI corner shape</string>
+    <string name="ui_radius_dialog_title">Select corner model</string>
+    <string name="rounded_style_default">Default</string>
+    <string name="rounded_style_rectangle">Rectangle</string>
+    <string name="rounded_style_large">Large rounding</string>
+    <string name="rounded_style_medium">Medium rounding</string>
+    <string name="statusbar_height_title">Statusbar height</string>
+    <string name="statusbar_height_dialog_title">Select statusbar height model</string>
+    <string name="sb_height_default">Default</string>
+    <string name="sb_height_medium">Medium</string>
+    <string name="sb_height_large">Large</string>
+    <string name="sb_height_extralarge">Extra Large</string>
 </resources>
 

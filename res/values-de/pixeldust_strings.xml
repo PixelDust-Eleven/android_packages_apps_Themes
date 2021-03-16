@@ -186,5 +186,20 @@
     <string name="qstile_ninja">Ninjastern</string>
     <string name="qstile_poke_sign">Poke-Zeichen</string>
     <string name="qstile_wavey">Wellenförmiger Farbverlauf</string>
+
+    <!-- gvisual mod -->
+    <string name="shape_ui_title">Form und UI-Anpassungen</string>
+    <string name="ui_radius_title">Aussehen der UI-Ecken</string>
+    <string name="ui_radius_dialog_title">Eckmodell wählen</string>
+    <string name="rounded_style_default">Standard</string>
+    <string name="rounded_style_rectangle">Eckig</string>
+    <string name="rounded_style_large">Große Rundung</string>
+    <string name="rounded_style_medium">Mittlere Rundung</string>
+    <string name="statusbar_height_title">Höhe der Statusleiste</string>
+    <string name="statusbar_height_dialog_title">Höhe der Statusleiste wählen</string>
+    <string name="sb_height_default">Standard</string>
+    <string name="sb_height_medium">Mittel</string>
+    <string name="sb_height_large">Groß</string>
+    <string name="sb_height_extralarge">Extra groß</string>
 </resources>
 

@@ -84,6 +84,8 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
     public static final String PREF_ADAPTIVE_ICON_SHAPE = "adapative_icon_shape";
     public static final String PREF_FONT_PICKER = "font_picker";
     public static final String PREF_STATUSBAR_ICONS = "statusbar_icons";
+    public static final String PREF_STATUSBAR_HEIGHT = "statusbar_height";
+    public static final String PREF_UI_RADIUS = "ui_radius";
     public static final String PREF_THEME_SWITCH = "theme_switch";
 
     private static final String PREF_RGB_ACCENT_PICKER = "rgb_accent_picker";
@@ -105,6 +107,8 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
     private ListPreference mFontPicker;
     private ListPreference mStatusbarIcons;
     private ListPreference mThemeSwitch;
+    private ListPreference mStatusbarHeight;
+    private ListPreference mUIRadius;
     private Preference mAccentPicker;
     private Preference mBackupThemes;
     private Preference mNavbarPicker;
@@ -347,6 +351,26 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
         }
         mStatusbarIcons.setSummary(mStatusbarIcons.getEntry());
 
+        // Statusbar height
+        mStatusbarHeight = (ListPreference) findPreference(PREF_STATUSBAR_HEIGHT);
+        int sbHeightValue = getOverlayPosition(ThemesUtils.STATUSBAR_HEIGHT);
+        if (sbHeightValue != -1) {
+            mStatusbarHeight.setValue(String.valueOf(sbHeightValue + 2));
+        } else {
+            mStatusbarHeight.setValue("1");
+        }
+        mStatusbarHeight.setSummary(mStatusbarHeight.getEntry());
+
+        // UI radius
+        mUIRadius = (ListPreference) findPreference(PREF_UI_RADIUS);
+        int uiRadiusValue = getOverlayPosition(ThemesUtils.UI_RADIUS);
+        if (uiRadiusValue != -1) {
+            mUIRadius.setValue(String.valueOf(uiRadiusValue + 2));
+        } else {
+            mUIRadius.setValue("1");
+        }
+        mUIRadius.setSummary(mUIRadius.getEntry());
+
         setWallpaperPreview();
         updateAccentSummary();
         updateNavbarSummary();
@@ -554,6 +578,34 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
                         true, mOverlayManager);
                 }
                 mStatusbarIcons.setSummary(mStatusbarIcons.getEntry());
+            }
+
+            if (key.equals(PREF_STATUSBAR_HEIGHT)) {
+                String gvisualMod = sharedPreferences.getString(PREF_STATUSBAR_HEIGHT, "1");
+                String overlayName = getOverlayName(ThemesUtils.STATUSBAR_HEIGHT);
+                int gvisualModValue = Integer.parseInt(gvisualMod);
+                if (overlayName != null) {
+                    handleOverlays(overlayName, false, mOverlayManager);
+                }
+                if (gvisualModValue > 1) {
+                    handleOverlays(ThemesUtils.STATUSBAR_HEIGHT[gvisualModValue - 2],
+                        true, mOverlayManager);
+                }
+                mStatusbarHeight.setSummary(mStatusbarHeight.getEntry());
+            }
+
+            if (key.equals(PREF_UI_RADIUS)) {
+                String gvisualMod = sharedPreferences.getString(PREF_UI_RADIUS, "1");
+                String overlayName = getOverlayName(ThemesUtils.UI_RADIUS);
+                int gvisualModValue = Integer.parseInt(gvisualMod);
+                if (overlayName != null) {
+                    handleOverlays(overlayName, false, mOverlayManager);
+                }
+                if (gvisualModValue > 1) {
+                    handleOverlays(ThemesUtils.UI_RADIUS[gvisualModValue - 2],
+                        true, mOverlayManager);
+                }
+                mUIRadius.setSummary(mUIRadius.getEntry());
             }
 
             if (key.equals(PREF_THEME_SWITCH)) {
@@ -777,6 +829,10 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
             .remove(PREF_ADAPTIVE_ICON_SHAPE)
             // Statusbar icons
             .remove(PREF_STATUSBAR_ICONS)
+            // Statusbar height
+            .remove(PREF_STATUSBAR_HEIGHT)
+            // Ui radius
+            .remove(PREF_UI_RADIUS)
             // Themes
             .remove(PREF_THEME_SWITCH)
             .apply();
