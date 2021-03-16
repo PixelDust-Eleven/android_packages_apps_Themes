@@ -18,6 +18,12 @@
 
     <string name="app_name">UI-Stil anpassen</string>
 
+    <!-- Categories -->
+    <string name="color_font_title">Farb- und Schriftanpassungen</string>
+    <string name="shape_ui_title">Form- und UI-Anpassungen</string>
+    <string name="system_theme_title">System Theme</string>
+    <string name="theme_other_category_title">Weiteres</string>
+
     <!-- Footer -->
     <string name="schedule_footer_info">Beachte beim Festlegen eines Zeitplans immer, dass der erste Zeitplan in der Zukunft liegen muss.\n\nZum Beispiel:\nWenn die aktuelle Zeit 16:00 Uhr ist und du einen Zeitplan von 6:00 bis 18:00 Uhr festlegen möchtest, dann stelle für den Zeitpunkt zum Wechseln des ersten UI-Stils 18:00 Uhr ein und für den zweiten 6:00 Uhr ein.</string>
 
@@ -127,7 +133,6 @@
     <string name="theme_type_solarized_dark">Solarisiertes Dunkel</string>
     <string name="theme_type_choco_x">Schwarzer Kaffee</string>
     <string name="theme_type_dark_grey">Dunkelgrau</string>
-    <string name="theme_other_category_title">Weiteres</string>
     <string name="theme_backup_title">Aktuellen UI-Stil sichern</string>
     <string name="theme_backup_summary">Sichere die aktuelle Konfiguration</string>
     <string name="theme_backup_reach_limit_summary">Sicherungslimit erreicht</string>
@@ -188,7 +193,6 @@
     <string name="qstile_wavey">Wellenförmiger Farbverlauf</string>
 
     <!-- gvisual mod -->
-    <string name="shape_ui_title">Form und UI-Anpassungen</string>
     <string name="ui_radius_title">Aussehen der UI-Ecken</string>
     <string name="ui_radius_dialog_title">Eckmodell wählen</string>
     <string name="rounded_style_default">Standard</string>

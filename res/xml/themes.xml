@@ -19,29 +19,34 @@
         android:key="wp_preview"
         android:enabled="false" />
 
-    <Preference
-        android:key="theme_accent_picker"
-        android:title="@string/theme_accent_picker_title"
-        android:summary="@string/theme_accent_picker_summary" />
+    <PreferenceCategory
+        android:title="@string/color_font_title" >
 
-    <com.pixeldust.support.colorpicker.ColorPickerPreference
-        android:key="rgb_accent_picker"
-        android:title="@string/rgb_accent_picker_title"
-        android:summary="@string/rgb_accent_picker_summary"
-        android:persistent="false" />
+        <Preference
+            android:key="theme_accent_picker"
+            android:title="@string/theme_accent_picker_title"
+            android:summary="@string/theme_accent_picker_summary" />
 
-    <Preference
-        android:key="theme_navbar_picker"
-        android:title="@string/theme_navbar_picker_title"
-        android:summary="@string/theme_navbar_picker_summary" />
+        <com.pixeldust.support.colorpicker.ColorPickerPreference
+            android:key="rgb_accent_picker"
+            android:title="@string/rgb_accent_picker_title"
+            android:summary="@string/rgb_accent_picker_summary"
+            android:persistent="false" />
 
-    <ListPreference
-        android:key="font_picker"
-        android:title="@string/font_type_title"
-        android:summary="@string/font_type_summary"
-        android:dialogTitle="@string/font_type_summary"
-        android:entries="@array/font_type_titles"
-        android:entryValues="@array/font_type_values" />
+        <Preference
+            android:key="theme_navbar_picker"
+            android:title="@string/theme_navbar_picker_title"
+            android:summary="@string/theme_navbar_picker_summary" />
+
+        <ListPreference
+            android:key="font_picker"
+            android:title="@string/font_type_title"
+            android:summary="@string/font_type_summary"
+            android:dialogTitle="@string/font_type_summary"
+            android:entries="@array/font_type_titles"
+            android:entryValues="@array/font_type_values" />
+
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:title="@string/shape_ui_title" >
@@ -82,7 +87,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="System theme" >
+        android:title="@string/system_theme_title" >
 
         <ListPreference
             android:key="theme_switch"

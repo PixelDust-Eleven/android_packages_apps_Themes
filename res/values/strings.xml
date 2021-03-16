@@ -17,6 +17,12 @@
 
     <string name="app_name">Themes</string>
 
+    <!-- Categories -->
+    <string name="color_font_title">Color and font customizations</string>
+    <string name="shape_ui_title">Shapes and UI customizations</string>
+    <string name="system_theme_title">System theme</string>
+    <string name="theme_other_category_title">Other</string>
+
     <!-- Footer -->
     <string name="schedule_footer_info">When setting a schedule, always set the first schedule time closest to your current time.\n\nFor example:\nIf the current time is 4:00pm and you want to set a schedule from 6:00am to 6:00pm, you would set the first theme to 6:00pm, then the second theme to 6:00am.</string>
 
@@ -158,7 +164,6 @@
     <string name="theme_type_solarized_dark">Solarized dark</string>
     <string name="theme_type_choco_x">Black coffee</string>
     <string name="theme_type_dark_grey">Dark grey</string>
-    <string name="theme_other_category_title">Other</string>
     <string name="theme_backup_title">Backup theme</string>
     <string name="theme_backup_summary">Backup your current theme configuration</string>
     <string name="theme_backup_reach_limit_summary">Backup limit reached</string>
@@ -220,7 +225,6 @@
     <string name="qstile_wavey">Wavey</string>
 
     <!-- gvisual mod -->
-    <string name="shape_ui_title">Shapes and UI customizations</string>
     <string name="ui_radius_title">UI corner shape</string>
     <string name="ui_radius_dialog_title">Select corner model</string>
     <string name="rounded_style_default">Default</string>
