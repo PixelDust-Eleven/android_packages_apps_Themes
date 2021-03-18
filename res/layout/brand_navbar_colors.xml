@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2018-2019 The Dirty Unicorns Project
+     Copyright (C) 2020 The PixelDust Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <Button
+        android:id="@+id/AndroidOneGreenNavbarcolor"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:layout_gravity="fill_horizontal"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/accent_picker_circle"
+        android:backgroundTint="#7cd318" />
+
+    <Button
+        android:id="@+id/CocaColaRedNavbarcolor"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:layout_gravity="fill_horizontal"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/accent_picker_circle"
+        android:backgroundTint="#F40009" />
+
+    <Button
+        android:id="@+id/DiscordPurpleNavbarcolor"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:layout_gravity="fill_horizontal"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/accent_picker_circle"
+        android:backgroundTint="#7289DA" />
+
+    <Button
+        android:id="@+id/FacebookBlueNavbarcolor"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:layout_gravity="fill_horizontal"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/accent_picker_circle"
+        android:backgroundTint="#3C5A99" />
+
+    <Button
+        android:id="@+id/InstagramCeriseNavbarcolor"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:layout_gravity="fill_horizontal"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/accent_picker_circle"
+        android:backgroundTint="#F00075" />
+
+    <Button
+        android:id="@+id/JollibeeCrimsonNavbarcolor"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:layout_gravity="fill_horizontal"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/accent_picker_circle"
+        android:backgroundTint="#e5173f" />
+
+    <Button
+        android:id="@+id/MonsterEnergyGreenNavbarcolor"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:layout_gravity="fill_horizontal"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/accent_picker_circle"
+        android:backgroundTint="#95D600" />
+
+    <Button
+        android:id="@+id/NextbitMintNavbarcolor"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:layout_gravity="fill_horizontal"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/accent_picker_circle"
+        android:backgroundTint="#8dd7e2" />
+
+    <Button
+        android:id="@+id/OneplusRedNavbarcolor"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:layout_gravity="fill_horizontal"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/accent_picker_circle"
+        android:backgroundTint="#EB0028" />
+
+    <Button
+        android:id="@+id/PepsiBlueNavbarcolor"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:layout_gravity="fill_horizontal"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/accent_picker_circle"
+        android:backgroundTint="#005CB4" />
+
+    <Button
+        android:id="@+id/PocophoneYellowNavbarcolor"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:layout_gravity="fill_horizontal"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/accent_picker_circle"
+        android:backgroundTint="#FCC900" />
+
+    <Button
+        android:id="@+id/RazerGreenNavbarcolor"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:layout_gravity="fill_horizontal"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/accent_picker_circle"
+        android:backgroundTint="#00ff00" />
+
+    <Button
+        android:id="@+id/SamsungBlueNavbarcolor"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:layout_gravity="fill_horizontal"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/accent_picker_circle"
+        android:backgroundTint="#034EA2" />
+
+    <Button
+        android:id="@+id/SpotifyGreenNavbarcolor"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:layout_gravity="fill_horizontal"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/accent_picker_circle"
+        android:backgroundTint="#1DB954" />
+
+    <Button
+        android:id="@+id/StarbucksGreenNavbarcolor"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:layout_gravity="fill_horizontal"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/accent_picker_circle"
+        android:backgroundTint="#00704A" />
+
+    <Button
+        android:id="@+id/TwitchPurpleNavbarcolor"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:layout_gravity="fill_horizontal"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/accent_picker_circle"
+        android:backgroundTint="#6441A4" />
+
+    <Button
+        android:id="@+id/TwitterBlueNavbarcolor"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:layout_gravity="fill_horizontal"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/accent_picker_circle"
+        android:backgroundTint="#1da1f2" />
+
+    <Button
+        android:id="@+id/XboxGreenNavbarcolor"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:layout_gravity="fill_horizontal"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/accent_picker_circle"
+        android:backgroundTint="#107C10" />
+
+    <Button
+        android:id="@+id/XiaomiOrangeNavbarcolor"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_columnWeight="1"
+        android:gravity="center"
+        android:layout_gravity="fill_horizontal"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/accent_picker_circle"
+        android:backgroundTint="#ff6700" />
+</LinearLayout>
+

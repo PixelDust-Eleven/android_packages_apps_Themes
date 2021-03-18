@@ -349,4 +349,110 @@
         <item>3</item>
         <item>4</item>
     </string-array>
+
+    <!-- Gvisiual mod navbar colors -->
+    <string-array name="navbarcolor_name">
+        <item>@string/accent_colors_space</item>
+        <item>@string/accent_colors_purple</item>
+        <item>@string/accent_colors_orchid</item>
+        <item>@string/accent_colors_ocean</item>
+        <item>@string/accent_colors_green</item>
+        <item>@string/accent_colors_cinnamon</item>
+        <item>@string/accent_colors_amethyst</item>
+        <item>@string/accent_colors_aquamarine</item>
+        <item>@string/accent_colors_carbon</item>
+        <item>@string/accent_colors_palette</item>
+        <item>@string/accent_colors_sand</item>
+        <item>@string/accent_colors_tangerine</item>
+        <item>@string/accent_colors_amber</item>
+        <item>@string/accent_colors_azureradiance</item>
+        <item>@string/accent_colors_blue</item>
+        <item>@string/accent_colors_bluegrey</item>
+        <item>@string/accent_colors_brown</item>
+        <item>@string/accent_colors_cyan</item>
+        <item>@string/accent_colors_deeporange</item>
+        <item>@string/accent_colors_deeppurple</item>
+        <item>@string/accent_colors_grey</item>
+        <item>@string/accent_colors_indigo</item>
+        <item>@string/accent_colors_lightblue</item>
+        <item>@string/accent_colors_lightgreen</item>
+        <item>@string/accent_colors_lime</item>
+        <item>@string/accent_colors_orange</item>
+        <item>@string/accent_colors_pink</item>
+        <item>@string/accent_colors_red</item>
+        <item>@string/accent_colors_teal</item>
+        <item>@string/accent_colors_yellow</item>
+        <item>@string/accent_colors_androidonegreen</item>
+        <item>@string/accent_colors_cocacolared</item>
+        <item>@string/accent_colors_discordpurple</item>
+        <item>@string/accent_colors_facebookblue</item>
+        <item>@string/accent_colors_instagramcerise</item>
+        <item>@string/accent_colors_jollibeecrimson</item>
+        <item>@string/accent_colors_monsterenergygreen</item>
+        <item>@string/accent_colors_nextbitmint</item>
+        <item>@string/accent_colors_oneplusred</item>
+        <item>@string/accent_colors_pepsiblue</item>
+        <item>@string/accent_colors_pocophoneyellow</item>
+        <item>@string/accent_colors_razergreen</item>
+        <item>@string/accent_colors_samsungblue</item>
+        <item>@string/accent_colors_spotifygreen</item>
+        <item>@string/accent_colors_starbucksgreen</item>
+        <item>@string/accent_colors_twitchpurple</item>
+        <item>@string/accent_colors_twitterblue</item>
+        <item>@string/accent_colors_xboxgreen</item>
+        <item>@string/accent_colors_xiaomiorange</item>
+    </string-array>
+
+    <!-- Navbar Color Picker Buttons -->
+    <string-array name="navbarcolor_picker_buttons">
+        <item>spaceNavbarcolor</item>
+        <item>purpleNavbarcolor</item>
+        <item>orchidNavbarcolor</item>
+        <item>oceanNavbarcolor</item>
+        <item>greenNavbarcolor</item>
+        <item>cinnamonNavbarcolor</item>
+        <item>amethystNavbarcolor</item>
+        <item>aquamarineNavbarcolor</item>
+        <item>carbonNavbarcolor</item>
+        <item>paletteNavbarcolor</item>
+        <item>sandNavbarcolor</item>
+        <item>tangerineNavbarcolor</item>
+        <item>amberNavbarcolor</item>
+        <item>azureradianceNavbarcolor</item>
+        <item>blueNavbarcolor</item>
+        <item>blueGreyNavbarcolor</item>
+        <item>brownNavbarcolor</item>
+        <item>cyanNavbarcolor</item>
+        <item>deepOrangeNavbarcolor</item>
+        <item>deepPurpleNavbarcolor</item>
+        <item>greyNavbarcolor</item>
+        <item>indigoNavbarcolor</item>
+        <item>lightBlueNavbarcolor</item>
+        <item>lightGreenNavbarcolor</item>
+        <item>limeNavbarcolor</item>
+        <item>orangeNavbarcolor</item>
+        <item>pinkNavbarcolor</item>
+        <item>redNavbarcolor</item>
+        <item>tealNavbarcolor</item>
+        <item>yellowNavbarcolor</item>
+        <item>AndroidOneGreenNavbarcolor</item>
+        <item>CocaColaRedNavbarcolor</item>
+        <item>DiscordPurpleNavbarcolor</item>
+        <item>FacebookBlueNavbarcolor</item>
+        <item>InstagramCeriseNavbarcolor</item>
+        <item>JollibeeCrimsonNavbarcolor</item>
+        <item>MonsterEnergyGreenNavbarcolor</item>
+        <item>NextbitMintNavbarcolor</item>
+        <item>OneplusRedNavbarcolor</item>
+        <item>PepsiBlueNavbarcolor</item>
+        <item>PocophoneYellowNavbarcolor</item>
+        <item>RazerGreenNavbarcolor</item>
+        <item>SamsungBlueNavbarcolor</item>
+        <item>SpotifyGreenNavbarcolor</item>
+        <item>StarbucksGreenNavbarcolor</item>
+        <item>TwitchPurpleNavbarcolor</item>
+        <item>TwitterBlueNavbarcolor</item>
+        <item>XboxGreenNavbarcolor</item>
+        <item>XiaomiOrangeNavbarcolor</item>
+    </string-array>
 </resources>

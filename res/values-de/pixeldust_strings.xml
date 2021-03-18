@@ -42,6 +42,11 @@
     <string name="theme_navbar_picker_title">Navbar-Stil</string>
     <string name="theme_navbar_picker_summary">Wähle den Navigationsleistenstil</string>
 
+    <!-- Navbar Color Picker -->
+    <string name="theme_navbar_color_picker_title">Farbe der Gesten-Navigation</string>
+    <string name="theme_navbar_color_picker_summary">Farbe für den Navigationsleisten-Griff wählen</string>
+    <string name="navbar_color_picker_dialog_title">Navbar-Farbe wählen</string>
+
     <!-- Dark theme -->
     <string name="dark_theme_title">Dunkel</string>
 

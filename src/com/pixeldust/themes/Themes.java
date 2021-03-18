@@ -78,6 +78,7 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
     private static final String PREF_THEME_ACCENT_PICKER = "theme_accent_picker";
     public static final String PREF_THEME_ACCENT_COLOR = "theme_accent_color";
     private static final String PREF_THEME_NAVBAR_PICKER = "theme_navbar_picker";
+    public static final String PREF_THEME_NAVBAR_COLOR = "theme_navbar_color";
     public static final String PREF_THEME_NAVBAR_STYLE = "theme_navbar_style";
     private static final String PREF_THEME_QSSTYLE_PICKER = "theme_qsstyle_picker";
     public static final String PREF_THEME_QSTILE_STYLE = "theme_qstile_style";
@@ -95,6 +96,7 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
     private static boolean mUseSharedPrefListener;
     private String[] mAccentName;
     private String[] mNavbarName;
+    private String[] mNavbarColorName;
     private String[] mQSStyleName;
 
     private Context mContext;
@@ -115,6 +117,7 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
     private Preference mQSStylePicker;
     private Preference mRestoreThemes;
     private Preference mThemeSchedule;
+    private Preference mNavbarColorPicker;
     private CustomPreference mWpPreview;
 
     private ColorPickerPreference rgbAccentPicker;
@@ -151,6 +154,9 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
 
         // Navbar summary
         mNavbarName = getResources().getStringArray(R.array.navbar_name);
+
+        // Navbar summary
+        mNavbarColorName = getResources().getStringArray(R.array.navbarcolor_name);
 
         // QSStyle summary
         mQSStyleName = getResources().getStringArray(R.array.qsstyle_name);
@@ -207,6 +213,23 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
         } else {
             prefSet.removePreference(mNavbarPicker);
         }
+
+        // Navbar color picker
+        mNavbarColorPicker = (Preference) findPreference(PREF_THEME_NAVBAR_COLOR);
+        assert mNavbarColorPicker != null;
+        mNavbarColorPicker.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            @Override
+            public boolean onPreferenceClick(Preference preference) {
+                FragmentManager manager = getFragmentManager();
+                Fragment frag = manager.findFragmentByTag(NavbarcolorPicker.TAG_NAVBARCOLOR_PICKER);
+                if (frag != null) {
+                    manager.beginTransaction().remove(frag).commit();
+                }
+                NavbarcolorPicker navbarcolorPickerFragment = new NavbarcolorPicker();
+                navbarcolorPickerFragment.show(manager, NavbarcolorPicker.TAG_NAVBARCOLOR_PICKER);
+                return true;
+            }
+        });
 
         // QSStyle picker
         mQSStylePicker = (Preference) findPreference(PREF_THEME_QSSTYLE_PICKER);
@@ -374,6 +397,7 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
         setWallpaperPreview();
         updateAccentSummary();
         updateNavbarSummary();
+        updateNavbarColorSummary();
         updateQSStyleSummary();
         updateThemeScheduleSummary();
         updateBackupPref();
@@ -534,6 +558,18 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
                     handleOverlays(navbarStyle, true, mOverlayManager);
                 }
                 updateNavbarSummary();
+            }
+
+            if (key.equals(PREF_THEME_NAVBAR_COLOR)) {
+                String navbarColor = sharedPreferences.getString(PREF_THEME_NAVBAR_COLOR, "default");
+                String overlayName = getOverlayName(ThemesUtils.NAVBAR_COLORS);
+                if (overlayName != null) {
+                    handleOverlays(overlayName, false, mOverlayManager);
+                }
+                if (navbarColor != "default") {
+                    handleOverlays(navbarColor, true, mOverlayManager);
+                }
+                updateNavbarColorSummary();
             }
 
             if (key.equals(PREF_THEME_QSTILE_STYLE)) {
@@ -759,6 +795,17 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
         }
     }
 
+    private void updateNavbarColorSummary() {
+        if (mNavbarColorPicker != null) {
+            int value = getOverlayPosition(ThemesUtils.NAVBAR_COLORS);
+            if (value != -1) {
+                mNavbarColorPicker.setSummary(mNavbarColorName[value]);
+            } else {
+                mNavbarColorPicker.setSummary(mContext.getString(R.string.theme_accent_picker_default));
+            }
+        }
+    }
+
     private void updateQSStyleSummary() {
         if (mQSStylePicker != null) {
             int value = getOverlayPosition(ThemesUtils.QS_TILE_THEMES);
@@ -821,6 +868,8 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
             .remove(PREF_THEME_ACCENT_COLOR)
             // NavBar
             .remove(PREF_THEME_NAVBAR_STYLE)
+            // NavBar color
+            .remove(PREF_THEME_NAVBAR_COLOR)
             // QSStyle
             .remove(PREF_THEME_QSTILE_STYLE)
             // Fonts

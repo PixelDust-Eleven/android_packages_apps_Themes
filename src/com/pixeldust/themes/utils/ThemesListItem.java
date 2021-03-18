@@ -30,6 +30,7 @@ public class ThemesListItem {
     private String mThemeSbIcons;
     private String mThemeWp;
     private String mThemeNavbarStyle;
+    private String mThemeNavbarColor;
     private String mThemeQSTileStyle;
 
     public ThemesListItem() {
@@ -39,7 +40,7 @@ public class ThemesListItem {
     public ThemesListItem(String themeName, String themeDayOrNight, String themeAccent, String themeNightColor,
                 String accentPicker, String themeSwitch, String adaptativeIconShape, String themeFont,
                 String themeIconShape, String themeSbIcons, String themeWp, String themeNavbarStyle,
-                String themeQSTileStyle) {
+                String themeNavbarColor, String themeQSTileStyle) {
         mThemeName = themeName;
         mThemeDayOrNight = themeDayOrNight;
         mThemeAccent = themeAccent;
@@ -52,6 +53,7 @@ public class ThemesListItem {
         mThemeSbIcons = themeSbIcons;
         mThemeWp = themeWp;
         mThemeNavbarStyle = themeNavbarStyle;
+        mThemeNavbarColor = themeNavbarColor;
         mThemeQSTileStyle = themeQSTileStyle;
     }
 
@@ -157,5 +159,13 @@ public class ThemesListItem {
 
     public void setThemeQSTileStyle(String themeQSTileStyle) {
         mThemeQSTileStyle = themeQSTileStyle;
+    }
+
+    public String getThemeNavbarColor() {
+        return mThemeNavbarColor;
+    }
+
+    public void setThemeNavbarColor(String themeNavbarColor) {
+        mThemeNavbarColor = themeNavbarColor;
     }
 }

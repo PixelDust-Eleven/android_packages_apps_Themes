@@ -203,7 +203,7 @@ public class BackupThemes extends DialogFragment {
         mThemeDatabase.addThemeDbUtils(new ThemeDbUtils(mThemeName, isDarkMode(),
             getIconsAccentColor(), getThemeNightColor(), getAccentPicker(),
             getThemeSwitch(), getAdaptiveIconShape(), getFont(), getIconsShape(),
-            getSbIcons(), getThemeWp(), getNavbarStyle(), getQSTileStyle()));
+            getSbIcons(), getThemeWp(), getNavbarStyle(), getNavbarColorPicker(), getQSTileStyle()));
     }
 
     private int getThemeBackupPreview() {
@@ -350,6 +350,11 @@ public class BackupThemes extends DialogFragment {
     private String getNavbarStyle() {
         String navbarStyle = mSharedPreferences.getString("theme_navbar_style", "default");
         return navbarStyle;
+    }
+
+    private String getNavbarColorPicker() {
+        String navbarcolorPicker = mSharedPreferences.getString("theme_navbar_color", "default");
+        return navbarcolorPicker;
     }
 
     private String getQSTileStyle() {

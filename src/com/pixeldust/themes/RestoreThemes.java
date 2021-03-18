@@ -61,7 +61,7 @@ public class RestoreThemes extends Activity implements CompoundButton.OnCheckedC
     public static final String TAG_RESTORE_THEMES = "restore_themes";
 
     private ArrayList<String> mSwitchList;
-    private int mNumSwitches = 8;
+    private int mNumSwitches = 9;
     private int mSwitchId;
     private LinearLayoutManager mLayoutManager;
     private List<ThemesListItem> mThemesList;
@@ -82,6 +82,7 @@ public class RestoreThemes extends Activity implements CompoundButton.OnCheckedC
     private Switch mIconShapeSwitch;
     private Switch mSbIconSwitch;
     private Switch mNavbarSwitch;
+    private Switch mNavbarColorSwitch;
     private Switch mQSTileSwitch;
     private Switch mWpSwitch;
 
@@ -117,6 +118,8 @@ public class RestoreThemes extends Activity implements CompoundButton.OnCheckedC
         } else {
             navbarSwitchLayout.setVisibility(View.GONE);
         }
+        mNavbarColorSwitch = (Switch) findViewById(R.id.navbarcolorSwitch);
+        mNavbarColorSwitch.setOnCheckedChangeListener(this);
         mQSTileSwitch = (Switch) findViewById(R.id.qstileSwitch);
         mQSTileSwitch.setOnCheckedChangeListener(this);
 
@@ -216,13 +219,17 @@ public class RestoreThemes extends Activity implements CompoundButton.OnCheckedC
                 mSwitchId = 5;
                 mSwitchArray[5] = mNavbarSwitch;
                 break;
-            case R.id.qstileSwitch:
+            case R.id.navbarcolorSwitch:
                 mSwitchId = 6;
-                mSwitchArray[6] = mQSTileSwitch;
+                mSwitchArray[6] = mNavbarColorSwitch;
+                break;
+            case R.id.qstileSwitch:
+                mSwitchId = 7;
+                mSwitchArray[7] = mQSTileSwitch;
                 break;
             case R.id.wpSwitch:
-                mSwitchId = 7;
-                mSwitchArray[7] = mWpSwitch;
+                mSwitchId = 8;
+                mSwitchArray[8] = mWpSwitch;
                 break;
         }
         mSharedPrefEditor.putBoolean("switch" + String.valueOf(mSwitchId + 1),
@@ -262,10 +269,12 @@ public class RestoreThemes extends Activity implements CompoundButton.OnCheckedC
                 mSwitchList.get(4), mSbIconSwitch.isChecked()));
             mNavbarSwitch.setChecked(mSharedPreferences.getBoolean(
                 mSwitchList.get(5), mNavbarSwitch.isChecked()));
+            mNavbarColorSwitch.setChecked(mSharedPreferences.getBoolean(
+                mSwitchList.get(6), mNavbarColorSwitch.isChecked()));
             mQSTileSwitch.setChecked(mSharedPreferences.getBoolean(
-                mSwitchList.get(6), mQSTileSwitch.isChecked()));
+                mSwitchList.get(7), mQSTileSwitch.isChecked()));
             mWpSwitch.setChecked(mSharedPreferences.getBoolean(
-                mSwitchList.get(7), mWpSwitch.isChecked()));
+                mSwitchList.get(8), mWpSwitch.isChecked()));
         } else {
             for (int i = 0; i < mNumSwitches; i++) {
                 mSharedPrefEditor.remove(mSwitchList.get(i));
@@ -277,6 +286,7 @@ public class RestoreThemes extends Activity implements CompoundButton.OnCheckedC
             mIconShapeSwitch.setChecked(mIconShapeSwitch.isChecked());
             mSbIconSwitch.setChecked(mSbIconSwitch.isChecked());
             mNavbarSwitch.setChecked(mNavbarSwitch.isChecked());
+            mNavbarColorSwitch.setChecked(mNavbarColorSwitch.isChecked());
             mQSTileSwitch.setChecked(mQSTileSwitch.isChecked());
             mWpSwitch.setChecked(mWpSwitch.isChecked());
         }
@@ -333,6 +343,7 @@ public class RestoreThemes extends Activity implements CompoundButton.OnCheckedC
         applyThemeSbIcons();
         applyThemeAccent();
         applyThemeNavbarStyle();
+        applyThemeNavbarColor();
         applyThemeQSTileStyle();
         applyThemeWp();
     }
@@ -387,6 +398,14 @@ public class RestoreThemes extends Activity implements CompoundButton.OnCheckedC
         }
     }
 
+    private void applyThemeNavbarColor() {
+        if (mNavbarColorSwitch.isChecked()) {
+            String newValue = mThemesList.get(getCurrentItem()).getThemeNavbarColor();
+            mSharedPrefEditor.putString("theme_navbar_color", newValue);
+            mSharedPrefEditor.apply();
+        }
+    }
+
     private void applyThemeQSTileStyle() {
         if (mQSTileSwitch.isChecked()) {
             String newValue = mThemesList.get(getCurrentItem()).getThemeQSTileStyle();
@@ -435,11 +454,12 @@ public class RestoreThemes extends Activity implements CompoundButton.OnCheckedC
             String themeSbIcons = themes.getThemeSbIcons();
             String themeWp = themes.getThemeWp();
             String themeNavbarStyle = themes.getThemeNavbarStyle();
+            String themeNavbarColor = themes.getThemeNavbarColor();
             String themeQSTileStyle = themes.getThemeQSTileStyle();
             mThemesList.add(new ThemesListItem(themeName, themeDayOrNight,
                     themeAccent, themeNightColor, accentPicker, themeSwitch,
                     adaptativeIconShape, themeFont, themeIconShape, themeSbIcons,
-                    themeWp, themeNavbarStyle, themeQSTileStyle));
+                    themeWp, themeNavbarStyle, themeNavbarColor, themeQSTileStyle));
         }
         mThemesAdapter.notifyDataSetChanged();
         assert mThemesList != null;
@@ -493,6 +513,7 @@ public class RestoreThemes extends Activity implements CompoundButton.OnCheckedC
                         mThemesList.get(getCurrentItem()).getThemeSbIcons(),
                         mThemesList.get(getCurrentItem()).getThemeWp(),
                         mThemesList.get(getCurrentItem()).getThemeNavbarStyle(),
+                        mThemesList.get(getCurrentItem()).getThemeNavbarColor(),
                         mThemesList.get(getCurrentItem()).getThemeQSTileStyle()),
                         oldThemeName);
                 setThemesData();

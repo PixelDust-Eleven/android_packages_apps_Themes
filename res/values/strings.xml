@@ -51,6 +51,11 @@
     <string name="theme_navbar_picker_old">Old</string>
     <string name="theme_navbar_picker_sammy">Samsung</string>
 
+    <!-- Navbar Color Picker -->
+    <string name="theme_navbar_color_picker_title">Gesture navbar color</string>
+    <string name="theme_navbar_color_picker_summary">Chose the color of the navbar handle</string>
+    <string name="navbar_color_picker_dialog_title">Select a navbar color</string>
+
     <!-- Dark theme -->
     <string name="dark_theme_title">Dark theme</string>
 
