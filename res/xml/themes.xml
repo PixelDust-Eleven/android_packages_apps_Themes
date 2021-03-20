@@ -20,7 +20,8 @@
         android:enabled="false" />
 
     <PreferenceCategory
-        android:title="@string/color_font_title" >
+        android:key="theme_accent_category"
+        android:title="@string/theme_accent_category_title" >
 
         <Preference
             android:key="theme_accent_picker"
@@ -33,15 +34,33 @@
             android:summary="@string/rgb_accent_picker_summary"
             android:persistent="false" />
 
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="theme_threebuttonsnavbar_category"
+        android:title="@string/theme_navbar_category_title" >
+
         <Preference
             android:key="theme_navbar_picker"
             android:title="@string/theme_navbar_picker_title"
             android:summary="@string/theme_navbar_picker_summary" />
 
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="theme_gesturenavbar_category"
+        android:title="@string/theme_navbar_category_title" >
+
         <Preference
             android:key="theme_navbar_color"
             android:title="@string/theme_navbar_color_picker_title"
             android:summary="@string/theme_navbar_color_picker_summary" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="theme_font_category"
+        android:title="@string/theme_font_category_title" >
 
         <ListPreference
             android:key="font_picker"
@@ -54,7 +73,8 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/shape_ui_title" >
+        android:key="theme_shape_ui_category"
+        android:title="@string/theme_shape_ui_category_title" >
 
         <ListPreference
             android:key="adapative_icon_shape"
@@ -92,7 +112,8 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/system_theme_title" >
+        android:key="theme_system_category"
+        android:title="@string/theme_system_category_title" >
 
         <ListPreference
             android:key="theme_switch"

@@ -18,9 +18,11 @@
     <string name="app_name">Themes</string>
 
     <!-- Categories -->
-    <string name="color_font_title">Color and font customizations</string>
-    <string name="shape_ui_title">Shapes and UI customizations</string>
-    <string name="system_theme_title">System theme</string>
+    <string name="theme_accent_category_title">System accent color</string>
+    <string name="theme_navbar_category_title">Navigationbar</string>
+    <string name="theme_font_category_title">Font customizations</string>
+    <string name="theme_shape_ui_category_title">Shapes and UI customizations</string>
+    <string name="theme_system_category_title">System theme</string>
     <string name="theme_other_category_title">Other</string>
 
     <!-- Footer -->
