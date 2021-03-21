@@ -24,6 +24,7 @@ import static com.pixeldust.themes.utils.Utils.handleBackgrounds;
 import static com.pixeldust.themes.utils.Utils.handleOverlays;
 import static com.pixeldust.themes.utils.Utils.isLiveWallpaper;
 import static com.pixeldust.themes.utils.Utils.threeButtonNavbarEnabled;
+import static com.pixeldust.themes.utils.Utils.gestureNavigationEnabled;
 
 import android.app.ActionBar;
 import android.app.AlertDialog;
@@ -78,7 +79,9 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
     private static final String PREF_THEME_ACCENT_PICKER = "theme_accent_picker";
     public static final String PREF_THEME_ACCENT_COLOR = "theme_accent_color";
     private static final String PREF_THEME_NAVBAR_PICKER = "theme_navbar_picker";
+    private static final String PREF_THEME_THREEBUTTONSNAVBAR_CATEGORY = "theme_threebuttonsnavbar_category";
     public static final String PREF_THEME_NAVBAR_COLOR = "theme_navbar_color";
+    private static final String PREF_THEME_GESTURENAVBAR_CATEGORY = "theme_gesturenavbar_category";
     public static final String PREF_THEME_NAVBAR_STYLE = "theme_navbar_style";
     private static final String PREF_THEME_QSSTYLE_PICKER = "theme_qsstyle_picker";
     public static final String PREF_THEME_QSTILE_STYLE = "theme_qstile_style";
@@ -193,7 +196,7 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
             }
         });
 
-        // Navbar picker
+        // Threebuttons navbar picker
         mNavbarPicker = (Preference) findPreference(PREF_THEME_NAVBAR_PICKER);
         if (threeButtonNavbarEnabled(mContext)) {
             assert mNavbarPicker != null;
@@ -211,25 +214,29 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
                 }
             });
         } else {
-            prefSet.removePreference(mNavbarPicker);
+            prefSet.removePreference(findPreference(PREF_THEME_THREEBUTTONSNAVBAR_CATEGORY));
         }
 
-        // Navbar color picker
+        // Gesture navbar color picker
         mNavbarColorPicker = (Preference) findPreference(PREF_THEME_NAVBAR_COLOR);
-        assert mNavbarColorPicker != null;
-        mNavbarColorPicker.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-            @Override
-            public boolean onPreferenceClick(Preference preference) {
-                FragmentManager manager = getFragmentManager();
-                Fragment frag = manager.findFragmentByTag(NavbarcolorPicker.TAG_NAVBARCOLOR_PICKER);
-                if (frag != null) {
-                    manager.beginTransaction().remove(frag).commit();
+        if (gestureNavigationEnabled()) {
+            assert mNavbarColorPicker != null;
+            mNavbarColorPicker.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+                @Override
+                public boolean onPreferenceClick(Preference preference) {
+                    FragmentManager manager = getFragmentManager();
+                    Fragment frag = manager.findFragmentByTag(NavbarcolorPicker.TAG_NAVBARCOLOR_PICKER);
+                    if (frag != null) {
+                        manager.beginTransaction().remove(frag).commit();
+                    }
+                    NavbarcolorPicker navbarcolorPickerFragment = new NavbarcolorPicker();
+                    navbarcolorPickerFragment.show(manager, NavbarcolorPicker.TAG_NAVBARCOLOR_PICKER);
+                    return true;
                 }
-                NavbarcolorPicker navbarcolorPickerFragment = new NavbarcolorPicker();
-                navbarcolorPickerFragment.show(manager, NavbarcolorPicker.TAG_NAVBARCOLOR_PICKER);
-                return true;
-            }
-        });
+            });
+        } else {
+            prefSet.removePreference(findPreference(PREF_THEME_GESTURENAVBAR_CATEGORY));
+        }
 
         // QSStyle picker
         mQSStylePicker = (Preference) findPreference(PREF_THEME_QSSTYLE_PICKER);

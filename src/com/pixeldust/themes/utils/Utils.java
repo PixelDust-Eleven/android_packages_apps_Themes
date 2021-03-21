@@ -278,4 +278,13 @@ public class Utils {
 
         return hasNavbar;
     }
+
+    public static boolean gestureNavigationEnabled() {
+        if (!PixeldustUtils.isThemeEnabled("com.android.internal.systemui.navbar.threebutton") &&
+                !PixeldustUtils.isThemeEnabled("com.android.internal.systemui.navbar.twobutton")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
