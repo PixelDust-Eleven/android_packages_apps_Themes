@@ -157,6 +157,9 @@
     <string name="theme_switch_restore_font_type">Schrifttyp</string>
     <string name="theme_switch_restore_adaptative_icons">Adaptive Symbole</string>
     <string name="theme_switch_restore_sb_icons">Statusleisten-Symbole</string>
+    <string name="theme_switch_restore_qstiles">QS-Kachel-Stil</string>
+    <string name="theme_switch_restore_sbheight">Höhe der Statusleiste</string>
+    <string name="theme_switch_restore_uiradius">Aussehen der UI-Ecken</string>
     <string name="theme_switch_restore_navbar">Navigationsleiste</string>
     <string name="theme_switch_restore_wallpaper">Hintergrund</string>
     <string name="theme_backup_edittext_hint">Sicherung_</string>
@@ -212,5 +215,17 @@
     <string name="sb_height_medium">Mittel</string>
     <string name="sb_height_large">Groß</string>
     <string name="sb_height_extralarge">Extra groß</string>
+
+    <!-- Switch Styles -->
+    <string name="switch_style_title">Switch-Stil</string>
+    <string name="switch_style_dialog_title">Switch-Stil anpassen</string>
+    <string name="switch_default">Standard</string>
+    <string name="switch_oneplus">OnePlus</string>
+    <string name="switch_narrow">Eng</string>
+    <string name="switch_contained">Eingeschlossen</string>
+    <string name="switch_telegram">Telegram</string>
+    <string name="switch_md2">Material Design 2</string>
+    <string name="switch_retro">Retro</string>
+    <string name="switch_oos">OxygenOS 11</string>
 </resources>
 
