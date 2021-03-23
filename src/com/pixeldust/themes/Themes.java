@@ -92,6 +92,7 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
     public static final String PREF_UI_RADIUS = "ui_radius";
     public static final String PREF_SWITCH_STYLE = "switch_style";
     public static final String PREF_THEME_SWITCH = "theme_switch";
+    public static final String PREF_BRIGHTNESS_SLIDER_STYLE = "brightness_slider_style";
 
     private static final String PREF_RGB_ACCENT_PICKER = "rgb_accent_picker";
     private static final String prefix = "hex";
@@ -116,6 +117,7 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
     private ListPreference mStatusbarHeight;
     private ListPreference mUIRadius;
     private ListPreference mSwitchStyle;
+    private ListPreference mBrightnessStyle;
     private Preference mAccentPicker;
     private Preference mBackupThemes;
     private Preference mNavbarPicker;
@@ -413,6 +415,16 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
         }
         mSwitchStyle.setSummary(mSwitchStyle.getEntry());
 
+        // Brightness slider style
+        mBrightnessStyle = (ListPreference) findPreference(PREF_BRIGHTNESS_SLIDER_STYLE);
+        int brightnessStyleValue = getOverlayPosition(ThemesUtils.BRIGHTNESS_SLIDER_STYLES);
+        if (brightnessStyleValue != -1) {
+            mBrightnessStyle.setValue(String.valueOf(brightnessStyleValue + 2));
+        } else {
+            mBrightnessStyle.setValue("1");
+        }
+        mBrightnessStyle.setSummary(mBrightnessStyle.getEntry());
+
         setWallpaperPreview();
         updateAccentSummary();
         updateNavbarSummary();
@@ -677,6 +689,20 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
                 mSwitchStyle.setSummary(mSwitchStyle.getEntry());
             }
 
+            if (key.equals(PREF_BRIGHTNESS_SLIDER_STYLE)) {
+                String brightnessStyle = sharedPreferences.getString(PREF_BRIGHTNESS_SLIDER_STYLE, "1");
+                String overlayName = getOverlayName(ThemesUtils.BRIGHTNESS_SLIDER_STYLES);
+                int brightnessStyleValue = Integer.parseInt(brightnessStyle);
+                if (overlayName != null) {
+                    handleOverlays(overlayName, false, mOverlayManager);
+                }
+                if (brightnessStyleValue > 1) {
+                    handleOverlays(ThemesUtils.BRIGHTNESS_SLIDER_STYLES[brightnessStyleValue - 2],
+                        true, mOverlayManager);
+                }
+                mBrightnessStyle.setSummary(mBrightnessStyle.getEntry());
+            }
+
             if (key.equals(PREF_THEME_SWITCH)) {
                 String themeSwitch = sharedPreferences.getString(PREF_THEME_SWITCH, "1");
                 switch (themeSwitch) {
@@ -917,6 +943,8 @@ public class Themes extends PreferenceFragment implements ThemesListener, OnPref
             .remove(PREF_UI_RADIUS)
             // Switch style
             .remove(PREF_SWITCH_STYLE)
+            // Brightness slider style
+            .remove(PREF_BRIGHTNESS_SLIDER_STYLE)
             // Themes
             .remove(PREF_THEME_SWITCH)
             .apply();
