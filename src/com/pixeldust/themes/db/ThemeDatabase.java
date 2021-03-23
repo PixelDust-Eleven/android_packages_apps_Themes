@@ -47,6 +47,8 @@ public class ThemeDatabase extends SQLiteOpenHelper {
     private static final String KEY_THEME_NAVBAR_STYLE = "themeNavbarStyle";
     private static final String KEY_THEME_NAVBAR_COLOR = "themeNavbarColor";
     private static final String KEY_THEME_QSTILE_STYLE = "themeQSTileStyle";
+    private static final String KEY_THEME_SB_HEIGHT = "themeSBHeight";
+    private static final String KEY_THEME_UI_RADIUS = "themeUIRadius";
 
     public ThemeDatabase(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -63,7 +65,9 @@ public class ThemeDatabase extends SQLiteOpenHelper {
                 + KEY_THEME_SB_ICONS + " TEXT," + KEY_THEME_WP + " TEXT,"
                 + KEY_THEME_NAVBAR_STYLE + " TEXT,"
                 + KEY_THEME_NAVBAR_COLOR + " TEXT,"
-                + KEY_THEME_QSTILE_STYLE + " TEXT" + ")";
+                + KEY_THEME_QSTILE_STYLE + " TEXT,"
+                + KEY_THEME_SB_HEIGHT + " TEXT,"
+                + KEY_THEME_UI_RADIUS + " TEXT" + ")";
         db.execSQL(CREATE_THEME_TABLE);
     }
 
@@ -91,6 +95,8 @@ public class ThemeDatabase extends SQLiteOpenHelper {
         values.put(KEY_THEME_NAVBAR_STYLE, themeDbUtils.getThemeNavbarStyle());
         values.put(KEY_THEME_NAVBAR_COLOR, themeDbUtils.getThemeNavbarColor());
         values.put(KEY_THEME_QSTILE_STYLE, themeDbUtils.getThemeQSTileStyle());
+        values.put(KEY_THEME_SB_HEIGHT, themeDbUtils.getThemeSBHeight());
+        values.put(KEY_THEME_UI_RADIUS, themeDbUtils.getThemeUIRadius());
 
         db.insert(THEME_TABLE, null, values);
         db.close();
@@ -104,7 +110,7 @@ public class ThemeDatabase extends SQLiteOpenHelper {
                         KEY_ACCENT_PICKER, KEY_THEME_SWITCH, KEY_ADAPTATIVE_ICON_SHAPE,
                         KEY_THEME_FONT, KEY_THEME_ICON_SHAPE, KEY_THEME_SB_ICONS,
                         KEY_THEME_WP, KEY_THEME_NAVBAR_STYLE, KEY_THEME_NAVBAR_COLOR,
-                        KEY_THEME_QSTILE_STYLE},
+                        KEY_THEME_QSTILE_STYLE, KEY_THEME_SB_HEIGHT, KEY_THEME_UI_RADIUS},
                         KEY_THEME_NAME + " = ?",
                         new String[] {str}, null, null, null, null);
         if (cursor != null) {
@@ -119,7 +125,8 @@ public class ThemeDatabase extends SQLiteOpenHelper {
                 cursor.getString(7), cursor.getString(8),
                 cursor.getString(9), cursor.getString(10),
                 cursor.getString(11), cursor.getString(12),
-                cursor.getString(13), cursor.getString(14));
+                cursor.getString(13), cursor.getString(14),
+                cursor.getString(15), cursor.getString(16));
         cursor.close();
 
         return themeDbUtils;
@@ -150,6 +157,8 @@ public class ThemeDatabase extends SQLiteOpenHelper {
                 themeDbUtils.setThemeNavbarStyle(cursor.getString(12));
                 themeDbUtils.setThemeNavbarColor(cursor.getString(13));
                 themeDbUtils.setThemeQSTileStyle(cursor.getString(14));
+                themeDbUtils.setThemeSBHeight(cursor.getString(15));
+                themeDbUtils.setThemeUIRadius(cursor.getString(16));
                 themeDbUtilsList.add(themeDbUtils);
             } while (cursor.moveToNext());
         }
@@ -176,6 +185,8 @@ public class ThemeDatabase extends SQLiteOpenHelper {
         values.put(KEY_THEME_NAVBAR_STYLE, themeDbUtils.getThemeNavbarStyle());
         values.put(KEY_THEME_NAVBAR_COLOR, themeDbUtils.getThemeNavbarColor());
         values.put(KEY_THEME_QSTILE_STYLE, themeDbUtils.getThemeQSTileStyle());
+        values.put(KEY_THEME_SB_HEIGHT, themeDbUtils.getThemeSBHeight());
+        values.put(KEY_THEME_UI_RADIUS, themeDbUtils.getThemeUIRadius());
 
         db.update(THEME_TABLE, values, KEY_THEME_NAME + " = ?",
                 new String[] {str});

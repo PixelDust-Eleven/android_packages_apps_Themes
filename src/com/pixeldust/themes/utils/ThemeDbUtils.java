@@ -33,6 +33,8 @@ public class ThemeDbUtils {
     private String mThemeNavbarStyle;
     private String mThemeNavbarColor;
     private String mThemeQSTileStyle;
+    private String mThemeSBHeight;
+    private String mThemeUIRadius;
 
     public ThemeDbUtils() {
         //
@@ -41,7 +43,7 @@ public class ThemeDbUtils {
     public ThemeDbUtils(int id, String themeName, String themeDayOrNight, String themeAccent, String themeNightColor,
                 String accentPicker, String themeSwitch, String adaptativeIconShape, String themeFont,
                 String themeIconShape, String themeSbIcons, String themeWp, String themeNavbarStyle,
-                String themeNavbarColor, String themeQSTileStyle) {
+                String themeNavbarColor, String themeQSTileStyle, String themeSBHeight, String themeUIRadius) {
         mId = id;
         mThemeName = themeName;
         mThemeDayOrNight = themeDayOrNight;
@@ -57,12 +59,14 @@ public class ThemeDbUtils {
         mThemeNavbarStyle = themeNavbarStyle;
         mThemeNavbarColor = themeNavbarColor;
         mThemeQSTileStyle = themeQSTileStyle;
+        mThemeSBHeight = themeSBHeight;
+        mThemeUIRadius = themeUIRadius;
     }
 
     public ThemeDbUtils(String themeName, String themeDayOrNight, String themeAccent, String themeNightColor,
                 String accentPicker, String themeSwitch, String adaptativeIconShape, String themeFont,
                 String themeIconShape, String themeSbIcons, String themeWp, String themeNavbarStyle,
-                String themeNavbarColor, String themeQSTileStyle) {
+                String themeNavbarColor, String themeQSTileStyle, String themeSBHeight, String themeUIRadius) {
         mThemeName = themeName;
         mThemeDayOrNight = themeDayOrNight;
         mThemeAccent = themeAccent;
@@ -77,6 +81,8 @@ public class ThemeDbUtils {
         mThemeNavbarStyle = themeNavbarStyle;
         mThemeNavbarColor = themeNavbarColor;
         mThemeQSTileStyle = themeQSTileStyle;
+        mThemeSBHeight = themeSBHeight;
+        mThemeUIRadius = themeUIRadius;
     }
 
     public int getID() {
@@ -197,5 +203,21 @@ public class ThemeDbUtils {
 
     public void setThemeNavbarColor(String themeNavbarColor) {
         mThemeNavbarColor = themeNavbarColor;
+    }
+
+    public String getThemeSBHeight() {
+        return mThemeSBHeight;
+    }
+
+    public void setThemeSBHeight(String themeSBHeight) {
+        mThemeSBHeight = themeSBHeight;
+    }
+
+    public String getThemeUIRadius() {
+        return mThemeUIRadius;
+    }
+
+    public void setThemeUIRadius(String themeUIRadius) {
+        mThemeUIRadius = themeUIRadius;
     }
 }

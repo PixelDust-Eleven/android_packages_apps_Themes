@@ -203,7 +203,8 @@ public class BackupThemes extends DialogFragment {
         mThemeDatabase.addThemeDbUtils(new ThemeDbUtils(mThemeName, isDarkMode(),
             getIconsAccentColor(), getThemeNightColor(), getAccentPicker(),
             getThemeSwitch(), getAdaptiveIconShape(), getFont(), getIconsShape(),
-            getSbIcons(), getThemeWp(), getNavbarStyle(), getNavbarColorPicker(), getQSTileStyle()));
+            getSbIcons(), getThemeWp(), getNavbarStyle(), getNavbarColorPicker(),
+            getQSTileStyle(), getSBHeight(), getUIRadius()));
     }
 
     private int getThemeBackupPreview() {
@@ -360,6 +361,16 @@ public class BackupThemes extends DialogFragment {
     private String getQSTileStyle() {
         String qsTileStyle = mSharedPreferences.getString("theme_qstile_style", "com.android.systemui.qstile.default");
         return qsTileStyle;
+    }
+
+    private String getSBHeight() {
+        String sbHeight = mSharedPreferences.getString("theme_sb_height", "default");
+        return sbHeight;
+    }
+
+    private String getUIRadius() {
+        String uiRadius = mSharedPreferences.getString("theme_ui_radius", "default");
+        return uiRadius;
     }
 
     private File getWallpaperBitmap() throws IOException {

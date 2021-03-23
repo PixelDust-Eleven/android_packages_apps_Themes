@@ -61,7 +61,7 @@ public class RestoreThemes extends Activity implements CompoundButton.OnCheckedC
     public static final String TAG_RESTORE_THEMES = "restore_themes";
 
     private ArrayList<String> mSwitchList;
-    private int mNumSwitches = 9;
+    private int mNumSwitches = 11;
     private int mSwitchId;
     private LinearLayoutManager mLayoutManager;
     private List<ThemesListItem> mThemesList;
@@ -84,6 +84,8 @@ public class RestoreThemes extends Activity implements CompoundButton.OnCheckedC
     private Switch mNavbarSwitch;
     private Switch mNavbarColorSwitch;
     private Switch mQSTileSwitch;
+    private Switch mSBHeightSwitch;
+    private Switch mUIRadiusSwitch;
     private Switch mWpSwitch;
 
     @Override
@@ -122,6 +124,10 @@ public class RestoreThemes extends Activity implements CompoundButton.OnCheckedC
         mNavbarColorSwitch.setOnCheckedChangeListener(this);
         mQSTileSwitch = (Switch) findViewById(R.id.qstileSwitch);
         mQSTileSwitch.setOnCheckedChangeListener(this);
+        mSBHeightSwitch = (Switch) findViewById(R.id.sbHeightSwitch);
+        mSBHeightSwitch.setOnCheckedChangeListener(this);
+        mUIRadiusSwitch = (Switch) findViewById(R.id.uiRadiusSwitch);
+        mUIRadiusSwitch.setOnCheckedChangeListener(this);
 
         mSwitchArray = new Switch[mNumSwitches];
         mSwitchList = new ArrayList<String>();
@@ -345,6 +351,8 @@ public class RestoreThemes extends Activity implements CompoundButton.OnCheckedC
         applyThemeNavbarStyle();
         applyThemeNavbarColor();
         applyThemeQSTileStyle();
+        applyThemeSBHeight();
+        applyThemeUIRadius();
         applyThemeWp();
     }
 
@@ -414,6 +422,22 @@ public class RestoreThemes extends Activity implements CompoundButton.OnCheckedC
         }
     }
 
+    private void applyThemeSBHeight() {
+        if (mSBHeightSwitch.isChecked()) {
+            String newValue = mThemesList.get(getCurrentItem()).getThemeSBHeight();
+            mSharedPrefEditor.putString("theme_sb_height", newValue);
+            mSharedPrefEditor.apply();
+        }
+    }
+
+    private void applyThemeUIRadius() {
+        if (mUIRadiusSwitch.isChecked()) {
+            String newValue = mThemesList.get(getCurrentItem()).getThemeUIRadius();
+            mSharedPrefEditor.putString("theme_ui_radius", newValue);
+            mSharedPrefEditor.apply();
+        }
+    }
+
     private void applyThemeWp() {
         if (mWpSwitch.isChecked()) {
             new Thread() {
@@ -456,10 +480,14 @@ public class RestoreThemes extends Activity implements CompoundButton.OnCheckedC
             String themeNavbarStyle = themes.getThemeNavbarStyle();
             String themeNavbarColor = themes.getThemeNavbarColor();
             String themeQSTileStyle = themes.getThemeQSTileStyle();
+            String themeSBHeight = themes.getThemeSBHeight();
+            String themeUIRadius = themes.getThemeUIRadius();
+
             mThemesList.add(new ThemesListItem(themeName, themeDayOrNight,
                     themeAccent, themeNightColor, accentPicker, themeSwitch,
                     adaptativeIconShape, themeFont, themeIconShape, themeSbIcons,
-                    themeWp, themeNavbarStyle, themeNavbarColor, themeQSTileStyle));
+                    themeWp, themeNavbarStyle, themeNavbarColor, themeQSTileStyle,
+                    themeSBHeight, themeUIRadius));
         }
         mThemesAdapter.notifyDataSetChanged();
         assert mThemesList != null;
@@ -514,7 +542,9 @@ public class RestoreThemes extends Activity implements CompoundButton.OnCheckedC
                         mThemesList.get(getCurrentItem()).getThemeWp(),
                         mThemesList.get(getCurrentItem()).getThemeNavbarStyle(),
                         mThemesList.get(getCurrentItem()).getThemeNavbarColor(),
-                        mThemesList.get(getCurrentItem()).getThemeQSTileStyle()),
+                        mThemesList.get(getCurrentItem()).getThemeQSTileStyle(),
+                        mThemesList.get(getCurrentItem()).getThemeSBHeight(),
+                        mThemesList.get(getCurrentItem()).getThemeUIRadius()),
                         oldThemeName);
                 setThemesData();
                 dialog.dismiss();

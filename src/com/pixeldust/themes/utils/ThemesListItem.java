@@ -32,6 +32,8 @@ public class ThemesListItem {
     private String mThemeNavbarStyle;
     private String mThemeNavbarColor;
     private String mThemeQSTileStyle;
+    private String mThemeSBHeight;
+    private String mThemeUIRadius;
 
     public ThemesListItem() {
         //
@@ -40,7 +42,7 @@ public class ThemesListItem {
     public ThemesListItem(String themeName, String themeDayOrNight, String themeAccent, String themeNightColor,
                 String accentPicker, String themeSwitch, String adaptativeIconShape, String themeFont,
                 String themeIconShape, String themeSbIcons, String themeWp, String themeNavbarStyle,
-                String themeNavbarColor, String themeQSTileStyle) {
+                String themeNavbarColor, String themeQSTileStyle, String themeSBHeight, String themeUIRadius) {
         mThemeName = themeName;
         mThemeDayOrNight = themeDayOrNight;
         mThemeAccent = themeAccent;
@@ -55,6 +57,8 @@ public class ThemesListItem {
         mThemeNavbarStyle = themeNavbarStyle;
         mThemeNavbarColor = themeNavbarColor;
         mThemeQSTileStyle = themeQSTileStyle;
+        mThemeSBHeight = themeSBHeight;
+        mThemeUIRadius = themeUIRadius;
     }
 
     public String getThemeName() {
@@ -167,5 +171,21 @@ public class ThemesListItem {
 
     public void setThemeNavbarColor(String themeNavbarColor) {
         mThemeNavbarColor = themeNavbarColor;
+    }
+
+    public String getThemeSBHeight() {
+        return mThemeSBHeight;
+    }
+
+    public void setThemeSBHeight(String themeSBHeight) {
+        mThemeSBHeight = themeSBHeight;
+    }
+
+    public String getThemeUIRadius() {
+        return mThemeUIRadius;
+    }
+
+    public void setThemeUIRadius(String themeUIRadius) {
+        mThemeUIRadius = themeUIRadius;
     }
 }
