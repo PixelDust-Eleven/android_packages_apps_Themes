@@ -227,5 +227,23 @@
     <string name="switch_md2">Material Design 2</string>
     <string name="switch_retro">Retro</string>
     <string name="switch_oos">OxygenOS 11</string>
+
+    <!-- Brightness slider styles -->
+    <string name="brightness_slider_style_title">Helligkeitsregler-Stil</string>
+    <string name="brightness_slider_style_dialog_title">Den Helligkeitsregler-Stil ändern</string>
+    <string name="brightness_slider_style_default">Standard</string>
+    <string name="brightness_slider_style_daniel">Daniel</string>
+    <string name="brightness_slider_style_mememini">Meme mini</string>
+    <string name="brightness_slider_style_memeround">Meme rund</string>
+    <string name="brightness_slider_style_memeroundstroke">Meme rund gestrichelt</string>
+    <string name="brightness_slider_style_memestroke">Meme gestrichelt</string>
+    <string name="brightness_slider_style_danielgradient">Daniel (Farbverlauf)</string>
+    <string name="brightness_slider_style_mememinigradient">Meme mini (Farbverlauf)</string>
+    <string name="brightness_slider_style_memeroundgradient">Meme rund (Farbverlauf)</string>
+    <string name="brightness_slider_style_memeroundstrokegradient">Meme round gestrichelt (Farbverlauf)</string>
+    <string name="brightness_slider_style_memestrokegradient">Meme gestrichelt (Farbverlauf)</string>
+    <string name="brightness_slider_style_minihalf">Meme mini halb</string>
+    <string name="brightness_slider_style_half">Meme halb (Farbverlauf)</string>
+    <string name="brightness_slider_style_oos">OOS-Stil</string>
 </resources>
 

@@ -116,6 +116,13 @@
             android:entries="@array/switch_style_titles"
             android:entryValues="@array/switch_style_values" />
 
+        <ListPreference
+            android:key="brightness_slider_style"
+            android:title="@string/brightness_slider_style_title"
+            android:dialogTitle="@string/brightness_slider_style_dialog_title"
+            android:entries="@array/brightness_slider_style_titles"
+            android:entryValues="@array/brightness_slider_style_values" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
