@@ -46,6 +46,7 @@
         android:entryValues="@array/theme_scheduled_values"/>
 
     <com.android.settingslib.widget.FooterPreference
-        android:summary="@string/schedule_footer_info" />
+        android:title="@string/schedule_footer_info"
+        android:selectable="false" />
 
 </PreferenceScreen>
