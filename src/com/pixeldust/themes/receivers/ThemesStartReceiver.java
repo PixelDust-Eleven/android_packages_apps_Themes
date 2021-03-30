@@ -128,7 +128,7 @@ public class ThemesStartReceiver extends BroadcastReceiver {
                     handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.CLEAR_SPRING, mOverlayManager);
                     if (PreferenceManager.getDefaultSharedPreferences(context)
                             .getBoolean(PREF_THEME_SCHEDULED_TOAST, true)) {
-                        Toast.makeText(context, context.getString(R.string.theme_type_choco_x) + " "
+                        Toast.makeText(context, context.getString(R.string.theme_type_dark_grey) + " "
                                 + context.getString(R.string.theme_schedule_applied), Toast.LENGTH_SHORT).show();
                     }
                     break;
