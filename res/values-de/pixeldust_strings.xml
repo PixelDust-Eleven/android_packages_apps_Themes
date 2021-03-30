@@ -140,6 +140,8 @@
     <string name="theme_type_solarized_dark">Solarisiertes Dunkel</string>
     <string name="theme_type_choco_x">Schwarzer Kaffee</string>
     <string name="theme_type_dark_grey">Dunkelgrau</string>
+    <string name="theme_type_dark_aubergine">Aubergine</string>
+    <string name="theme_type_clear_spring">Durchsichtig</string>
     <string name="theme_backup_title">Aktuellen UI-Stil sichern</string>
     <string name="theme_backup_summary">Sichere die aktuelle Konfiguration</string>
     <string name="theme_backup_reach_limit_summary">Sicherungslimit erreicht</string>

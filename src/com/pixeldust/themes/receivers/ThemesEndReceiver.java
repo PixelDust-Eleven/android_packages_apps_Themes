@@ -70,6 +70,8 @@ public class ThemesEndReceiver extends BroadcastReceiver {
                     handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_NO, ThemesUtils.SOLARIZED_DARK, mOverlayManager);
                     handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_NO, ThemesUtils.CHOCO_X, mOverlayManager);
                     handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_NO, ThemesUtils.DARK_GREY, mOverlayManager);
+                    handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_NO, ThemesUtils.DARK_AUBERGINE, mOverlayManager);
+                    handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_NO, ThemesUtils.CLEAR_SPRING, mOverlayManager);
                     if (PreferenceManager.getDefaultSharedPreferences(context)
                             .getBoolean(PREF_THEME_SCHEDULED_TOAST, true)) {
                         Toast.makeText(context, context.getString(R.string.theme_type_light) + " "
@@ -81,6 +83,8 @@ public class ThemesEndReceiver extends BroadcastReceiver {
                     handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.SOLARIZED_DARK, mOverlayManager);
                     handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.CHOCO_X, mOverlayManager);
                     handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.DARK_GREY, mOverlayManager);
+                    handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.DARK_AUBERGINE, mOverlayManager);
+                    handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.CLEAR_SPRING, mOverlayManager);
                     if (PreferenceManager.getDefaultSharedPreferences(context)
                             .getBoolean(PREF_THEME_SCHEDULED_TOAST, true)) {
                         Toast.makeText(context, context.getString(R.string.theme_type_google_dark) + " "
@@ -92,6 +96,8 @@ public class ThemesEndReceiver extends BroadcastReceiver {
                     handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.SOLARIZED_DARK, mOverlayManager);
                     handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.CHOCO_X, mOverlayManager);
                     handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.DARK_GREY, mOverlayManager);
+                    handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.DARK_AUBERGINE, mOverlayManager);
+                    handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.CLEAR_SPRING, mOverlayManager);
                     if (PreferenceManager.getDefaultSharedPreferences(context)
                             .getBoolean(PREF_THEME_SCHEDULED_TOAST, true)) {
                         Toast.makeText(context, context.getString(R.string.theme_type_pitch_black) + " "
@@ -103,6 +109,8 @@ public class ThemesEndReceiver extends BroadcastReceiver {
                     handleBackgrounds(true, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.SOLARIZED_DARK, mOverlayManager);
                     handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.CHOCO_X, mOverlayManager);
                     handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.DARK_GREY, mOverlayManager);
+                    handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.DARK_AUBERGINE, mOverlayManager);
+                    handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.CLEAR_SPRING, mOverlayManager);
                     if (PreferenceManager.getDefaultSharedPreferences(context)
                             .getBoolean(PREF_THEME_SCHEDULED_TOAST, true)) {
                         Toast.makeText(context, context.getString(R.string.theme_type_solarized_dark) + " "
@@ -114,6 +122,8 @@ public class ThemesEndReceiver extends BroadcastReceiver {
                     handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.SOLARIZED_DARK, mOverlayManager);
                     handleBackgrounds(true, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.CHOCO_X, mOverlayManager);
                     handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.DARK_GREY, mOverlayManager);
+                    handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.DARK_AUBERGINE, mOverlayManager);
+                    handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.CLEAR_SPRING, mOverlayManager);
                     if (PreferenceManager.getDefaultSharedPreferences(context)
                             .getBoolean(PREF_THEME_SCHEDULED_TOAST, true)) {
                         Toast.makeText(context, context.getString(R.string.theme_type_choco_x) + " "
@@ -125,9 +135,37 @@ public class ThemesEndReceiver extends BroadcastReceiver {
                     handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.SOLARIZED_DARK, mOverlayManager);
                     handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.CHOCO_X, mOverlayManager);
                     handleBackgrounds(true, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.DARK_GREY, mOverlayManager);
+                    handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.DARK_AUBERGINE, mOverlayManager);
+                    handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.CLEAR_SPRING, mOverlayManager);
                     if (PreferenceManager.getDefaultSharedPreferences(context)
                             .getBoolean(PREF_THEME_SCHEDULED_TOAST, true)) {
                         Toast.makeText(context, context.getString(R.string.theme_type_choco_x) + " "
+                                + context.getString(R.string.theme_schedule_applied), Toast.LENGTH_SHORT).show();
+                    }
+                    break;
+                case "7":
+                    handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.PITCH_BLACK, mOverlayManager);
+                    handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.SOLARIZED_DARK, mOverlayManager);
+                    handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.CHOCO_X, mOverlayManager);
+                    handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.DARK_GREY, mOverlayManager);
+                    handleBackgrounds(true, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.DARK_AUBERGINE, mOverlayManager);
+                    handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.CLEAR_SPRING, mOverlayManager);
+                    if (PreferenceManager.getDefaultSharedPreferences(context)
+                            .getBoolean(PREF_THEME_SCHEDULED_TOAST, true)) {
+                        Toast.makeText(context, context.getString(R.string.theme_type_dark_aubergine) + " "
+                                + context.getString(R.string.theme_schedule_applied), Toast.LENGTH_SHORT).show();
+                    }
+                    break;
+                case "8":
+                    handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.PITCH_BLACK, mOverlayManager);
+                    handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.SOLARIZED_DARK, mOverlayManager);
+                    handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.CHOCO_X, mOverlayManager);
+                    handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.DARK_GREY, mOverlayManager);
+                    handleBackgrounds(false, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.DARK_AUBERGINE, mOverlayManager);
+                    handleBackgrounds(true, context, UiModeManager.MODE_NIGHT_YES, ThemesUtils.CLEAR_SPRING, mOverlayManager);
+                    if (PreferenceManager.getDefaultSharedPreferences(context)
+                            .getBoolean(PREF_THEME_SCHEDULED_TOAST, true)) {
+                        Toast.makeText(context, context.getString(R.string.theme_type_clear_spring) + " "
                                 + context.getString(R.string.theme_schedule_applied), Toast.LENGTH_SHORT).show();
                     }
                     break;

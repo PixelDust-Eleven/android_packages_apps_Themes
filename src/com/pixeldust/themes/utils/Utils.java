@@ -110,6 +110,12 @@ public class Utils {
                 case "6":
                     scheduledStartThemeSummary = context.getString(R.string.theme_type_dark_grey);
                     break;
+                case "7":
+                    scheduledStartThemeSummary = context.getString(R.string.theme_type_dark_aubergine);
+                    break;
+                case "8":
+                    scheduledStartThemeSummary = context.getString(R.string.theme_type_clear_spring);
+                    break;
             }
         }
         return scheduledStartThemeSummary;
@@ -149,6 +155,13 @@ public class Utils {
                 case "6":
                     scheduledEndThemeSummary = context.getString(R.string.theme_type_dark_grey);
                     break;
+                case "7":
+                    scheduledEndThemeSummary = context.getString(R.string.theme_type_dark_aubergine);
+                    break;
+                case "8":
+                    scheduledEndThemeSummary = context.getString(R.string.theme_type_clear_spring);
+                    break;
+
             }
         }
         return scheduledEndThemeSummary;
