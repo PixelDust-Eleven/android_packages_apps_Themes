@@ -35,6 +35,8 @@ public class ThemeDbUtils {
     private String mThemeQSTileStyle;
     private String mThemeSBHeight;
     private String mThemeUIRadius;
+    private String mThemeSliderStyle;
+    private String mThemeSwitchStyle;
 
     public ThemeDbUtils() {
         //
@@ -43,7 +45,8 @@ public class ThemeDbUtils {
     public ThemeDbUtils(int id, String themeName, String themeDayOrNight, String themeAccent, String themeNightColor,
                 String accentPicker, String themeSwitch, String adaptativeIconShape, String themeFont,
                 String themeIconShape, String themeSbIcons, String themeWp, String themeNavbarStyle,
-                String themeNavbarColor, String themeQSTileStyle, String themeSBHeight, String themeUIRadius) {
+                String themeNavbarColor, String themeQSTileStyle, String themeSBHeight, String themeUIRadius,
+                String themeSliderStyle, String themeSwitchStyle) {
         mId = id;
         mThemeName = themeName;
         mThemeDayOrNight = themeDayOrNight;
@@ -61,12 +64,15 @@ public class ThemeDbUtils {
         mThemeQSTileStyle = themeQSTileStyle;
         mThemeSBHeight = themeSBHeight;
         mThemeUIRadius = themeUIRadius;
+        mThemeSliderStyle = themeSliderStyle;
+        mThemeSwitchStyle = themeSwitchStyle;
     }
 
     public ThemeDbUtils(String themeName, String themeDayOrNight, String themeAccent, String themeNightColor,
                 String accentPicker, String themeSwitch, String adaptativeIconShape, String themeFont,
                 String themeIconShape, String themeSbIcons, String themeWp, String themeNavbarStyle,
-                String themeNavbarColor, String themeQSTileStyle, String themeSBHeight, String themeUIRadius) {
+                String themeNavbarColor, String themeQSTileStyle, String themeSBHeight, String themeUIRadius,
+                String themeSliderStyle, String themeSwitchStyle) {
         mThemeName = themeName;
         mThemeDayOrNight = themeDayOrNight;
         mThemeAccent = themeAccent;
@@ -83,6 +89,8 @@ public class ThemeDbUtils {
         mThemeQSTileStyle = themeQSTileStyle;
         mThemeSBHeight = themeSBHeight;
         mThemeUIRadius = themeUIRadius;
+        mThemeSliderStyle = themeSliderStyle;
+        mThemeSwitchStyle = themeSwitchStyle;
     }
 
     public int getID() {
@@ -219,5 +227,21 @@ public class ThemeDbUtils {
 
     public void setThemeUIRadius(String themeUIRadius) {
         mThemeUIRadius = themeUIRadius;
+    }
+
+    public String getThemeSliderStyle() {
+        return mThemeSliderStyle;
+    }
+
+    public void setThemeSliderStyle(String themeSliderStyle) {
+        mThemeSliderStyle = themeSliderStyle;
+    }
+
+    public String getThemeSwitchStyle() {
+        return mThemeSwitchStyle;
+    }
+
+    public void setThemeSwitchStyle(String themeSwitchStyle) {
+        mThemeSwitchStyle = themeSwitchStyle;
     }
 }

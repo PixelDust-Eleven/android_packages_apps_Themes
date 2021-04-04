@@ -204,7 +204,7 @@ public class BackupThemes extends DialogFragment {
             getIconsAccentColor(), getThemeNightColor(), getAccentPicker(),
             getThemeSwitch(), getAdaptiveIconShape(), getFont(), getIconsShape(),
             getSbIcons(), getThemeWp(), getNavbarStyle(), getNavbarColorPicker(),
-            getQSTileStyle(), getSBHeight(), getUIRadius()));
+            getQSTileStyle(), getSBHeight(), getUIRadius(), getSliderStyle(), getSwitchStyle()));
     }
 
     private int getThemeBackupPreview() {
@@ -371,6 +371,16 @@ public class BackupThemes extends DialogFragment {
     private String getUIRadius() {
         String uiRadius = mSharedPreferences.getString("theme_ui_radius", "default");
         return uiRadius;
+    }
+
+    private String getSliderStyle() {
+        String sliderStyle = mSharedPreferences.getString("theme_slider_style", "default");
+        return sliderStyle;
+    }
+
+    private String getSwitchStyle() {
+        String switchStyle = mSharedPreferences.getString("theme_switch_style", "default");
+        return switchStyle;
     }
 
     private File getWallpaperBitmap() throws IOException {

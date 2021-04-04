@@ -294,10 +294,69 @@
             </FrameLayout>
 
             <FrameLayout
+                android:id="@+id/sliderStyleLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/uiRadiusSwitch">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/theme_switch_restore_sliderstyle"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="?android:attr/textColorSecondary"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+
+                <Switch
+                    android:id="@+id/sliderStyleSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|end"
+                    android:checked="true" />
+
+            </FrameLayout>
+            <FrameLayout
+                android:id="@+id/switchStyleLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sliderStyleLayout">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/theme_switch_restore_switchstyle"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textColor="?android:attr/textColorSecondary"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+
+                <Switch
+                    android:id="@+id/switchStyleSwitch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|end"
+                    android:checked="true" />
+
+            </FrameLayout>
+
+            <FrameLayout
                 android:id="@+id/navbarSwitchLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/uiRadiusLayout">
+                android:layout_below="@+id/switchStyleLayout">
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
