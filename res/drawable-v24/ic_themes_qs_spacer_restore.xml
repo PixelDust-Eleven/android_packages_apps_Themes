@@ -5,6 +5,7 @@
         android:bottom="-0dp">
 
         <shape android:shape="rectangle">
+            <solid android:color="@color/qs_tile_panel_spacer" />
 
             <corners
                 android:topLeftRadius="10dp"
