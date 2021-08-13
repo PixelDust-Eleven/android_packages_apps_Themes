@@ -34,6 +34,7 @@ import android.widget.Button;
 import androidx.preference.PreferenceManager;
 
 import com.android.internal.util.pixeldust.ThemesUtils;
+import com.android.internal.util.pixeldust.PixeldustUtils;
 
 public class AccentPicker extends DialogFragment {
 
@@ -75,6 +76,7 @@ public class AccentPicker extends DialogFragment {
         builder.setNeutralButton(mContext.getString(R.string.theme_accent_picker_default), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 mSharedPreferencesEditor.remove("theme_accent_color").apply();
+                PixeldustUtils.reloadIcons(mContext);
                 dialog.dismiss();
             }
         });
@@ -108,6 +110,7 @@ public class AccentPicker extends DialogFragment {
                 public void onClick(View v) {
                     mSharedPreferencesEditor.putString("theme_accent_color", accent);
                     mSharedPreferencesEditor.apply();
+                    PixeldustUtils.reloadIcons(mContext);
                     dismiss();
                 }
             });
